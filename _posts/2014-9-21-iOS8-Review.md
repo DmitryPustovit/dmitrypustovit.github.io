@@ -3,9 +3,10 @@ layout: post
 title: iOS 8 - Huge For Developers. Massive For Everyone Else.
 ---
 
-					This is my opinion of iOS 8 and if people should upgrade. I will be covering only the iPhones. 
-					It will include a lot of the major drawbacks to the new update. I also mention some of the major 
-					benefits of the new update and what make it pretty neat.
+					This is my opinion of iOS 8 and if people should upgrade. 
+					I will be covering only the iPhones. It will include a lot 
+					of the major drawbacks to the new update. I also mention some 
+					of the major update and what make it pretty neat.
 
 					First of all. If you have an iPhone 4s, don't even bother. Even though apple says it is supported, 
 					the new iOS slows your 4s to almost unusable speeds. This is expected, the 4s is outdated. This iOS 
