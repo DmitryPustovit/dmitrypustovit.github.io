@@ -4,6 +4,8 @@ title: Who Is Dmitry Pustovit?
 permalink: /about/
 ---
 
+![_config.yml]({{ site.baseurl }}/images/profile.jpg)
+
 Technology is all around us in the world today. The challenge exists not to use it but to improve it.
 
 ### A Bit About Me
