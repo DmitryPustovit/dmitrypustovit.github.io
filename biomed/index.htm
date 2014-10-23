@@ -135,7 +135,7 @@
   }
   #group1 .parallax__layer--base {
     background: #2980b9;
-	background-image: url('12f0a18c.jpg');
+	background-image: url('m6rT4MYFQ7CT8j9m2AEC_JakeGivens - Sunset in the Park.jpg');
   }
 
   #group2 {
@@ -213,8 +213,50 @@
 	text-decoration: none;
 	color: white;
 	}
+	
+	#buttons{
+	position: fixed;
+	z-index: 2;
+	right: 20px;
+	bottom: 80px;
+	}
+	
+	.linkButton{
+	text-align:center;
+		padding-top: 17px ;
+		padding-bottom: 17px ;
+	background-color: #34495e;
+	margin-top: 10px;
+	font-size: 20px;
+	}
+	
+	.linkButton a{
+	padding: 20px ;
+	color: white;
+	text-decoration: none;
+	}
+	
+	.linkButton a:hover{
+	background-color: #2c3e50;
+	}
   
 </style>
+
+  <script>
+
+
+var $root = $('html, body');
+var i=$('a.display1').length, v=1;
+$('a.display1').click(function(){
+    var to = v<i ? $(this).closest('.parallax__group').next('.parallax__group').offset().top : 0;
+    $root.animate({
+        scrollTop: to
+    }, 500);
+    if(v<i) {v++;} else {v=1;}
+    return false;
+});
+
+  </script>
 </head>
 
 <body>
@@ -238,13 +280,16 @@
 	</ul>
   </div>
   -->
+  
+<!--  <div id="buttons">
+  <div class -->
 
   <div class="parallax">
     <div id="group1" class="parallax__group">
       <div class="parallax__layer parallax__layer--base">
-        <div class="title" style="color: white; font-family: 'Source Sans Pro', sans-serif; font-size: 50px;">
+        <div class="title" style="color: black; font-size: 40px;">
 		Do You Have Type 1 Diabetes?
-		<div style="font-size: 26px; margin-top: 40px; color: white;font-family: 'Source Sans Pro', sans-serif;">If you or a love one have Type 1 Diabetes, <strong style="color: white;">Don't Panic</strong>.<br/> Scroll Down To Learn More</div>
+		<div style="font-size: 26px; margin-top: 40px; color: black; font-family: 'Source Sans Pro', sans-serif;"> If you or a loved one have Type 1 Diabetes, <strong style="color: black;"> Don't Panic</strong>.<br/> Scroll Down To Learn More</div>
 		</div>
       </div>
     </div>
@@ -253,7 +298,7 @@
         <div class="title" style="">
 			<div class="row" style="text-align:left;">
 			<div class="col-xs-4" style=" text-align: center;"><img src="symbol.png"/> <br/> <br/> <b style="font-weight: 400; font-size: 14px;">Above is the national symbol for Type 1 Diabetes.</b></div>
-				<div class="col-xs-8" style="height:330px;"><p style="margin-top: 30px;">Type 1 diabetes is not the end of your life. If is simply a challenge for you to overcome. <br/> <br/>Type 1 Diabetes, unlike Type 2 Diabetes, occurs when a person's body cannot naturally produce enough <strong><a href="" style="color: #2c3e50;">insulin</a></strong>. <strong><a href="" style="color: #2c3e50;">Insulin</a></strong> is needed because it allows for the human body to use the sugar that it is consumed as energy.</p> </div>
+				<div class="col-xs-8" style="height:330px;"><p style="margin-top: -10px;">Type 1 Diabetes, unlike Type 2 Diabetes, occurs when a person's body cannot naturally produce enough <strong><a href="/dontfear#insulin" style="color: #2c3e50;">insulin</a></strong>. This is because the <strong><a href="/dontfear#betacells" style="color: #2c3e50;">Beta Cells</a></strong> that are located in Type 1 Diabetic's <strong><a href="/dontfear#pancreas" style="color: #2c3e50;">Pancreas</a></strong> are working correctly. <strong><a href="/dontfear#pancreas" style="color: #2c3e50;">Insulin</a></strong> is needed because it allows for the human body to use the sugar(<strong><a href="/dontfear#glucose" style="color: #2c3e50;">glucose</a></strong>) that it is consumed as energy, this occurs because <strong><a href="/dontfear#insulin" style="color: #2c3e50;"> insulin </a></strong> goes into the cells <strong><a href="/dontfear#insulinreceptors" style="color: #2c3e50;"> insulin receptors </a></strong> telling the cell's <strong><a href="/dontfear#transportproteins" style="color: #2c3e50;">   </a></strong> to come to the <strong><a href="/dontfear#cellmembrane" style="color: #2c3e50;"> cell membrane</a></strong> and take in sugar.</p> </div>
 			</div>
 		</div>
       </div>
@@ -274,7 +319,7 @@
     </div>
     <div id="group4" class="parallax__group">
       <div class="parallax__layer parallax__layer--base">
-        <div class="title" style="padding-top: 250px; color: white;"><br/>Type 1 Diabetes is manageable and people with Type 1 Diabetes can live long and healthy lives. However, people who have been diagnosed with Type 1 Diabetes will find that they must monitor their <strong><a href="#" style="color: #2c3e50;">Blood Sugar Level</a></strong> very carefully. If their <strong><a href="#" style="color: #2c3e50;">Blood Sugar Level</a></strong> becomes too high, they must inject themselves with <strong><a href="#" style="color: #2c3e50;">Insulin</a></strong> in order to decrease their <strong><a href="#" style="color: #2c3e50;">Blood Sugar Level</a></strong>. If a Type 1 Diabetic does not monitor his or her <strong><a href="#" style="color: #2c3e50;">Blood Sugar Level</a></strong>, they risk become <strong><a href="" style="color: #2c3e50;">Hyperglycaemic</a></strong>.</div>
+        <div class="title" style="padding-top: 250px; color: white;"><br/>Type 1 Diabetes is manageable and people with Type 1 Diabetes can live long and healthy lives. However, people who have been diagnosed with Type 1 Diabetes will find that they must monitor their <strong><a href="#" style="color: #2c3e50;">Blood Sugar Level</a></strong> very carefully. This is done by putting a bit of their blood on finger sticks and then having a machine analysis it. If their <strong><a href="#" style="color: #2c3e50;">Blood Sugar Level</a></strong> becomes too high, they must inject themselves with <strong><a href="#" style="color: #2c3e50;">Insulin</a></strong> in order to decrease their <strong><a href="#" style="color: #2c3e50;">Blood Sugar Level</a></strong>. If a Type 1 Diabetic does not monitor his or her <strong><a href="#" style="color: #2c3e50;">Blood Sugar Level</a></strong>, they risk become <strong><a href="" style="color: #2c3e50;">Hyperglycaemic</a></strong>.</div>
       </div>
       <div class="parallax__layer parallax__layer--back" style="background: #e74c3c;">
         <div class="title" style="padding-bottom: 250px;"><img src="bloodsugar.PNG"/></div>
@@ -285,7 +330,7 @@
     </div>
     <div id="group5" class="parallax__group">
       <div class="parallax__layer parallax__layer--fore">
-        <div class="title" style="color:white;">Foreground Layer</div>
+        <div class="title" style="color:white;"><img src="running.png" style="width: 180px;"/><br/>A healthy life style and exercise are very important to a type 1 diabetic. Exercise and a healthy life style help to regulate your body’s Blood Sugar level while allowing you to receive the necessary nutritional values. It helps regulate the sugar in your body. Recommended exercises are aerobics however, talk to your doctor before you alter your lifestyle. </div>
       </div>
       <div class="parallax__layer parallax__layer--base" style="background-image:url('QGXfT1CkRpmvlwtPpgul_IMG_0558.jpg');">
         <div class="title"> </div>
@@ -293,10 +338,17 @@
     </div>
     <div id="group6" class="parallax__group">
       <div class="parallax__layer parallax__layer--back">
-        <div class="title">Background Layer</div>
+        <div class="title"> </div>
       </div>
       <div class="parallax__layer parallax__layer--base">
-        <div class="title">Base Layer</div>
+        <div class="title">
+				<b>Who can help?</b>
+				<br/><br/>
+		<div class="row">
+			<div class="col-xs-6"> <img src="pysch.png" style="width: 190px; margin-bottom: 10px;"/> <br/> Psychologist <br/> A psychologist evaluates, diagnoses, treats, and studies behavior and mental processes. Can help diabetics with the the modification of their life styles. </div>
+			<div class="col-xs-6"> <img src="food.png"/> <br/> Nutritionist <br/> A specialist who advises on matters of food and nutrition impacts on health. Can help diabetics create a meal plan that suits them.</div>
+		</div>
+		</div>
       </div>
     </div>
     <div id="group7" class="parallax__group">
