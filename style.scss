@@ -213,6 +213,7 @@ nav {
   margin-top: 55px; // @TODO: Vertically middle align
   font-family: 'Cabin', sans-serif; 
   font-size: 20px;
+  text-align: center;
   
   @include mobile {
     float: none;
@@ -241,7 +242,7 @@ nav {
 
 .posts > .post {
   padding-bottom: 2em;
-  border-bottom: 1px solid $lightGray;
+  border-bottom: 1px solid black;
 }
 
 .posts > .post:last-child {
