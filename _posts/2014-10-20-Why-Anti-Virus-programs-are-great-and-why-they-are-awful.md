@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Why Anti-Virus Programs are Great and Why They are Awful.
+title: Anti-Virus Programs. The good. The bad.
 ---
 
 I am a big supporter of antivirus programs. They just make you feel better and safer on the web. They are like a bullet proof vest against most viruses. There is no question about it, they are great because of that. However, they are also some of the most irritating things in existence. 

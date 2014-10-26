@@ -1,6 +1,6 @@
 ---
 layout: post
-title: iOS 8 - Huge For Developers. Massive For Everyone Else.
+title: iOS 8 Review
 ---
 
 This is my opinion of iOS 8 and if people should upgrade. 
