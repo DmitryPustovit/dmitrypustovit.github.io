@@ -8,10 +8,10 @@ layout: default
   <div class="entry">
     {{ content }}
   </div>
-
+  <br/>
   <div class="date">
     Written on {{ page.date | date: "%B %e, %Y" }}
   </div>
-
+  <br/><br/>
   {% include disqus.html disqus_identifier=page.disqus_identifier %}
 </article>
