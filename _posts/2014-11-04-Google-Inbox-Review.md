@@ -3,7 +3,7 @@ layout: post
 title: Google Inbox
 ---
 
-![_config.yml]({{ site.baseurl }}/images/intro-product-Google-Inbox.jpg)
+![_config.yml]({{ site.baseurl }}/images/inbox.jpg)
 
 Recently Google has released a new email service called Inbox. This is a new service that works with a user’s Gmail account. It gives users access to a redesigned email client that is jam packed with new features. Currently it is invite only, Google’s usual approach to new services. I managed to get access and have had some time to experience it.
 
