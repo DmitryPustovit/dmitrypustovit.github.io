@@ -10,7 +10,7 @@ Recently Google has released a new email service called Inbox. This is a new ser
 First impression: 
 What Google has created is a system in which your email looks nicer and is much more effecient. They do this by encouraging you to keep your main Inbox empty of new emails. That said your old emails are still included, just not in the Inbox. Most of your emails should be or should be moved to the Done section. This is more of a storage vault for all of your emails. 
 	
-	*Fair warning, they go into the Done section in the order you put them in, as in the first email sent to the done section is at the very end of the list. If you want to see your recent emails first then start transferring your emails in reverse. Kind of a pain but then again there is a reason Google hasn’t released this to the public yet.*
+*Fair warning, they go into the Done section in the order you put them in, as in the first email sent to the done section is at the very end of the list. If you want to see your recent emails first then start transferring your emails in reverse. Kind of a pain but then again there is a reason Google hasn’t released this to the public yet.*
 
 Then there is the Snooze feature. This is a lot like the snooze feature on your alarm clock, you send the emails that you want to avoid dealing to the Snooze section. It is a rather interesting feature, it even comes with time intervals that you can snooze for. 
 
