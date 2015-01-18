@@ -5,7 +5,7 @@ title: Internet Controlled Car
 
 ![_config.yml]({{ site.baseurl }}/images/Car_2.png)
 
-Over the winter holidays, a friend and I decided to find out what we could do with an old RC car and an Arduino. Well the word decided is a bit of a simplification, it’s more like I decided and dragged him along but none the less we put our efforts together and decided to see what we can do. My friend’s name is Vishnu and you can find his blog at [vishnumemon.com](https://vishnumemon.com).
+Over the winter holidays, a friend and I decided to find out what we could do with an old RC car and an Arduino. Well the word decided is a bit of a simplification, it’s more like I decided and dragged him along but none the less we put our efforts together and decided to see what we can do. My friend’s name is Vishnu and you can find his blog at [vishnumenon.com](https://vishnumenon.com).
 
 At first I was the only one working on this little project and I wanted to start with the basics (I had never controlled DC motors with an Arduino before). I started by removing all of the electronics from the RC car except for the motors and in my case, my RC car had little LEDs in the wheels and I thought it would be a waste to get rid of them so I kept them(I never did use them, maybe one day I will).
 
