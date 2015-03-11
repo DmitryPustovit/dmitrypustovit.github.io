@@ -4,25 +4,9 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 </head>
 <body>
-  <div class="header">
-
-  </div>
-<script>
-$( ".header").load( "parts/header.htm");
-</script>
-
-<div id="posts">
-
-</div>
-
-<script>
-for (var i=0;i<=100;i++)
-{
-jQuery('<div/>', { id: 'a' + i,}).appendTo('#posts');
-$( "#a" +  i ).load( "posts/Article" + i + ".htm" );
-document.write("<br />");
-}
-</script>
-
+<div class="header"></div>
+<script> $( ".header").load( "parts/header.htm"); </script>
+<div id="posts"></div>
+<script src="scripts/posts"></script>
 </body>
 </html>
