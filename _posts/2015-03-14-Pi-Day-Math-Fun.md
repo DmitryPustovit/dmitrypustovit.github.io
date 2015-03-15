@@ -25,7 +25,7 @@ Next I will be using Nilakantha's series which is similar but converges to the f
 
 Pi = 3 + ( 4 / (2 * 3 * 4) ) - ( 4 / (4 * 5 * 6) ) + ( 4 / (6 * 7 * 8) ) …
 
-This series converges to the much first 5 decimals faster than the Gregory–Leibniz series.  It gets the first 5 terms after only 22 terms it converges to the first 5 decimals.
+This series converges to the first 5 decimals much faster than the Gregory–Leibniz series.  It gets the first 5 terms after only 22 terms it converges to the first 5 decimals.
 
 
 Try it out:
