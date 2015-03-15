@@ -33,7 +33,7 @@ Try it out:
 <iframe src="http://dmitrypustovit.com/pi/pi2.html" style="border:none"></iframe>
 
 
-I will only go over Nilakantha's series, it is pretty similar to the code I sued for the Gregory–Leibniz Series.
+I will only go over Nilakantha's series, it is pretty similar to the code I used for the Gregory–Leibniz Series.
 I used a basic for loop to perform a calculation for a user defined number of terms. This was then outputted to a div in the html.
 
 <pre><code>
