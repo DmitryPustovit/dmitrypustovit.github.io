@@ -5,6 +5,7 @@ permalink: /about/
 ---
 
 ![_config.yml]({{ site.baseurl }}/images/profile.jpg)
+<img src="http://dmitrypustovit.com/images/profile.jpg" style="    border: 2px solid white; border-radius: 50px;"/>
 
 Technology is all around us in the world today. The challenge exists not to use it but to improve it.
 
