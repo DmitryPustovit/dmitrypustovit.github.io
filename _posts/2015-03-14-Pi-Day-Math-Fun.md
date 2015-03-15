@@ -3,9 +3,9 @@ layout: post
 title: Pi Day Math Fun
 ---
 
-![_config.yml]({{ site.baseurl }}/images/pi.jpg)
+<h1 style="font-size: 100px;"> &#928; </h1> ![_config.yml]({{ site.baseurl }}/images/pi.jpg)
 
-Its Pi day so I am obligated to do something that has to do with Pi so I decided to find Pi. I will use calculus to do this, specifically infinite series. My calculus teach should be very proud of me. I will be using two different methods.
+Its Pi day so I am obligated to do something that has to do with Pi so I decided to find Pi. I will use calculus to do this, specifically infinite series. My calculus teacher should be very proud of me. I will be using two different methods.
 
 <h1> Gregory–Leibniz Series </h1>
 The first is the Gregory–Leibniz series which is best explained as the following:
@@ -31,3 +31,8 @@ This series converges much faster than the Gregory–Leibniz series.  It gets th
 Try it out:
 
 <iframe src="http://dmitrypustovit.com/pi/pi2.html" style="border:none"></iframe>
+
+
+
+
+That is it for this quick post. Go out, have some fun, and eat some pie. Happy &#928; day!
