@@ -3,7 +3,7 @@ layout: post
 title: Internet Controlled Car
 ---
 
-![_config.yml]({{ site.baseurl }}/images/Car_2.png)
+![_config.yml]({{ site.baseurl }}/images/Car_2.jpg)
 
 Over the winter holidays, a friend and I decided to find out what we could do with an old RC car and an Arduino. Well the word decided is a bit of a simplification, it’s more like I decided and dragged him along but none the less we put our efforts together and decided to see what we can do. My friend’s name is Vishnu and you can find his blog at [vishnumenon.com](https://vishnumenon.com).
 
@@ -11,7 +11,7 @@ At first I was the only one working on this little project and I wanted to start
 
 I put the wires that lead to the LEDs in the car’s wheels out of my way and proceeded to hook up the car’s DC motors to a motor controller I bought on amazon for less than 15 dollars. I plugged the motors into the two motor slots and then connected the car’s built in battery back to the motor controller. Then I connected the motor controller to the Arduino and connected a 9V battery to the Arduino. Once that was done I wanted to see if I could get the car to detect objects in front of it and stop moving. I found an ultrasonic sensor and hocked that up using a breadboard. This is what it looked like:
 
-![_config.yml]({{ site.baseurl }}/images/Robotic_Mess.png)
+![_config.yml]({{ site.baseurl }}/images/Robotic_Mess.jpg)
 
 To say it was a bit of a mess would be an understatement. Also as you may have noticed I am not using an actual Arduino UNO but a SainSmart UNO. It works exactly like an Arduino UNO but is a few dollars cheaper (I end up hot gluing the board to the RC frame and didn’t want to waste a real Arduino). I believe the motor controller I used was also a SainSmart product.
 
@@ -27,7 +27,7 @@ After I connected the Bluetooth module to the Arduino and wrote the code that wa
 
 A server was set up on nitrous.io that used node.js. A web GUI was created looked like this:
 
-![_config.yml]({{ site.baseurl }}/images/Webpage_1.png)
+![_config.yml]({{ site.baseurl }}/images/Webpage_1.jpg)
 
 The buttons change the variable when being pressed and then set it back to its default value. This causing the car to move based on the command being sent and then to stop. Once the server was completed everything was done and the testing began.
 
@@ -38,7 +38,7 @@ Part Two:
 
 A bit later on we decided it would be fun if we were to add a way to “drive” the RC car. In essence we agreed to add a sonar sensor to the front of the car and send that value to the server to display on the webpage. Another friend of mine who was visiting also helped with this part. Sadly he does not have a blog.
 
-![_config.yml]({{ site.baseurl }}/images/Webpage_2.png)
+![_config.yml]({{ site.baseurl }}/images/Webpage_2.jpg)
 
 To start off, half of the issues we encountered were due to the senor. One sensor wouldn’t work at all and the once currently being used has a couple of issues. We also decided that the server would refresh the sonar value every half second in an attempt to get the most accurate value. This only resulted in the server becoming ever slower.
 
