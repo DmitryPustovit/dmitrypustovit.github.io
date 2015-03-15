@@ -33,6 +33,26 @@ Try it out:
 <iframe src="http://dmitrypustovit.com/pi/pi2.html" style="border:none"></iframe>
 
 
+I will only go over Nilakantha's series, it is pretty similar to the code I sued for the Gregory–Leibniz Series.
+I used a basic for loop to perform a calculation for a user defined number of terms. This was then outputted to a div in the html.
+
+<code>
+function FindPi()
+{
+
+    var Pi=3;
+    var v=2;
+    var term = document.getElementById('number').value;
+
+    for (i=0;i<=term;i++)
+    {
+        Pi = Pi + (4/(v * (v+1) * (v+2))) - (4/((v +2) * (v+3) * (v+4)))
+        v = (v + 4)
+    }
+
+    $("#PiResults").html(Pi);
+}
+</code>
 
 
 That is it for this quick post. Go out, have some fun, and eat some pie. Happy &pi; day!
