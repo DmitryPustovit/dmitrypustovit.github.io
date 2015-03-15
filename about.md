@@ -4,7 +4,7 @@ title: Who Is Dmitry Pustovit?
 permalink: /about/
 ---
 
-<img src="http://dmitrypustovit.com/images/profile.jpg" style="border: 2px solid white; border-radius: 200px; text-align:center;"/>
+<img src="http://dmitrypustovit.com/images/profile.jpg" style="border: 2px solid white; border-radius: 300px; width: 200px; margin: auto;"/>
 
 Technology is all around us in the world today. The challenge exists not to use it but to improve it.
 
