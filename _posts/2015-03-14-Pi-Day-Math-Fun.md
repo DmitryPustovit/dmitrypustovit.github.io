@@ -39,7 +39,6 @@ I used a basic for loop to perform a calculation for a user defined number of te
 <pre><code>
 function FindPi()
 {
-
     var Pi=3;
     var v=2;
     var term = document.getElementById('number').value;
@@ -54,7 +53,5 @@ function FindPi()
 }
 </code></pre>
 
-
-
-
+<br/><br/>
 That is it for this quick post. Go out, have some fun, and eat some pie. Happy &pi; day!
