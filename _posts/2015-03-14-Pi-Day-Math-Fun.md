@@ -3,7 +3,7 @@ layout: post
 title: Pi Day Math Fun: Let's Find Pi!
 ---
 
-![_config.yml]({{ site.baseurl }}/images/AutoBackLogo.png)
+![_config.yml]({{ site.baseurl }}/images/pi.jpg)
 
 Its Pi day so I am obligated to do something that has to do with Pi so I decided to find Pi. I will use calculus to do this, specifically infinite series. My calculus teach should be very proud of me. I will be using two different methods, the first is the Gregory–Leibniz series which is best explained as the following:
 
@@ -14,7 +14,7 @@ After 500,000 terms the first 5 decimals are correct.
 
 Try it out:
 
-<iframe src="../pi/pi1.htm" style="border:none"></iframe>
+<iframe src="http://dmitrypustovit.com/pi/pi1.html" style="border:none"></iframe>
 
 
 
@@ -28,4 +28,4 @@ This series converges much faster than the Gregory–Leibniz series.  It gets th
 
 Try it out:
 
-<iframe src="../pi/pi1.htm" style="border:none"></iframe>
+<iframe src="http://dmitrypustovit.com/pi/pi2.html" style="border:none"></iframe>
