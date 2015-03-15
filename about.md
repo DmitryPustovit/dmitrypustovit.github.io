@@ -14,4 +14,4 @@ Programming is my passion. I also enjoy several other activities such as robot b
 
 ### Contact me
 
-[me@dmitrypustovit.com](mailto:me@dmitrypustovit.com)
+[me@dmitrypustovit.com](mailto:me@dmitrypustovit.com)  (EDIT: This email address is down, It will be up soon.)
