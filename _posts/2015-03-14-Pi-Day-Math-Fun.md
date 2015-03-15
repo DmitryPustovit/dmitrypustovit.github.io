@@ -50,9 +50,11 @@ function FindPi()
         v = (v + 4)
     }
 
-    $("#PiResults").html(Pi); // This is a bit of JQuery... You can do the same with JS easily. 
+    $("#PiResults").html(Pi); // This is a bit of JQuery... You can do the same with JS easily.
 }
 </code></pre>
+
+
 
 
 That is it for this quick post. Go out, have some fun, and eat some pie. Happy &pi; day!
