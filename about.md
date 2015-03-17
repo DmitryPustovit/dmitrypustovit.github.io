@@ -9,10 +9,10 @@ permalink: /about/
 
 <center> Technology is all around us in the world today. The challenge exists not to use it but to improve it. </center>
 
-### A Bit About Me
+<center> ### A Bit About Me </center>
 
-Programming is my passion. I also enjoy several other activities such as robot building and writing. I love sci-fi and I find myself commonly working on a ridiculous solution to a problem most people don't have.
+<center> Programming is my passion. I also enjoy several other activities such as robot building and writing. I love sci-fi and I find myself commonly working on a ridiculous solution to a problem most people don't have. </center>
 
-### Contact me
+<center> ### Contact me </center>
 
-[me@dmitrypustovit.com](mailto:me@dmitrypustovit.com)  (EDIT: This email address is down, It will be up soon.)
+<center> [me@dmitrypustovit.com](mailto:me@dmitrypustovit.com)  (EDIT: This email address is down, It will be up soon.) </center>
