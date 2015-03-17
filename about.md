@@ -5,9 +5,9 @@ permalink: /about/
 ---
 
 <center> <img src="http://dmitrypustovit.com/images/profile.jpg" style="border: 1px solid white; border-radius: 300px; width: 200px;"/> </center>
-<h1> Dmitry Pustovit </h1>
+<center><h1> Dmitry Pustovit </h1> </center>
 
-Technology is all around us in the world today. The challenge exists not to use it but to improve it.
+<center> Technology is all around us in the world today. The challenge exists not to use it but to improve it. </center>
 
 ### A Bit About Me
 
