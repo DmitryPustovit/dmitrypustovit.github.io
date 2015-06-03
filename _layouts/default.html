@@ -17,16 +17,14 @@
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
 	<link href='http://fonts.googleapis.com/css?family=Quicksand:300,400' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Cabin' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
 
     <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
   </head>
 
   <body style="border-top: solid black 10px;">
-    <div class="container-fluid" style="background: #2c3e50; padding-bottom: 0;">
       <div class="wrapper-masthead" style="padding-bottom: 0;">
-        <div class="container" style="  /* background-image:url('../images/DeathtoStock_Creative Community3.jpg'); */">
+        <div class="container" style=" background: black;  /* background-image:url('../images/DeathtoStock_Creative Community3.jpg'); */">
           <header class="masthead clearfix" style="border: none;">
            <!-- <a href="{{ site.baseurl }}/" class="site-avatar"><img src="{{ site.avatar }}" /></a> --> <!-- Removed Avatar -->
 
@@ -35,14 +33,13 @@
               <p class="site-description" style="font-family: 'Quicksand', sans-serif;"><big style="font-size: 20px;"><b style="color:#3498DB; font-weight: 400;">Developer</b>. <b style="color:#5cb85c; font-weight: 400;">Designer</b>. <b style="color:#9B59B6; font-weight: 400;">Writer</b>. <b style="color:#5F7174; font-weight: 400;">Robot Builder</b>. <b style="color:#E67E22; font-weight: 400;">Physics Enthusiast</b>.</p>
             </div>
 
-            <nav style=" margin-top: 40px; padding-bottom: 0; color: white;">
-              <a href="{{ site.baseurl }}/">Blog</a>
-              <a href="{{ site.baseurl }}/about">About</a>
+            <nav style=" margin-top: 40px; padding-bottom: 0;">
+              <a href="{{ site.baseurl }}/" style="color: white;">Blog</a>
+              <a href="{{ site.baseurl }}/about" style="color: white;">About</a>
             </nav>
           </header>
         </div>
       </div>
-  </div>
 
     <div id="main" role="main" class="container">
       {{ content }}
