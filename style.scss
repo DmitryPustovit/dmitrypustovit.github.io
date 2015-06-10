@@ -31,10 +31,10 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Cabin', sans-serif;
+  font-family: 'Roboto', sans-serif;
   color: $darkerGray;
   font-weight: bold;
-  
+
   line-height: 1.7;
   margin: 1em 0 15px;
   padding: 0;
@@ -43,8 +43,8 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.4;
   }
 }
-  
-h1 {  
+
+h1 {
   font-size: 30px;
   letter-spacing: 2px;
   a {
@@ -52,15 +52,15 @@ h1 {
   }
 }
 
-h2 {  
+h2 {
   font-size: 24px;
 }
 
-h3 {  
+h3 {
   font-size: 20px;
 }
 
-h4 {  
+h4 {
   font-size: 18px;
   color: $gray;
 }
@@ -153,7 +153,7 @@ img {
 .masthead {
   padding: 20px 0;
   border-bottom: 1px solid $lightGray;
-  
+
   @include mobile {
     text-align: center;
   }
@@ -190,7 +190,7 @@ img {
   margin: 0;
   color: $darkGray;
   cursor: pointer;
-  font-family: 'Cabin', sans-serif;; 
+  font-family: 'Cabin', sans-serif;;
   font-weight: 300;
   font-size: 28px;
   letter-spacing: 1px;
@@ -202,7 +202,7 @@ img {
   color: $gray;
   font-size: 16px;
   text-align: center;
-  
+
   @include mobile {
     margin: 3px 0;
   }
@@ -211,10 +211,10 @@ img {
 nav {
   //float: right;
   margin-top: 55px; // @TODO: Vertically middle align
-  font-family: 'Cabin', sans-serif; 
+  font-family: 'Cabin', sans-serif;
   font-size: 20px;
   text-align: center;
-  
+
   @include mobile {
     float: none;
     margin-top: 30px;
@@ -250,7 +250,7 @@ nav {
   border-bottom: none;
 }
 
-.post { 
+.post {
   blockquote {
     margin: 1.8em .8em;
     border-left: 2px solid $gray;
@@ -268,7 +268,7 @@ nav {
     text-transform: uppercase;
     font-size: 15px;
   }
-  
+
   img{
 	display: block;
     margin-left: auto;
