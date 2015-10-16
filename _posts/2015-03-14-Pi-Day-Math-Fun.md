@@ -36,7 +36,7 @@ Try it out:
 I will only go over Nilakantha's series, it is pretty similar to the code I used for the Gregory–Leibniz Series.
 I used a basic for loop to perform a calculation for a user defined number of terms. This was then outputted to a div in the html.
 
-<pre><code>
+<code>
 function FindPi()
 {
     var Pi=3;
@@ -51,7 +51,7 @@ function FindPi()
 
     $("#PiResults").html(Pi); // This is a bit of JQuery... You can do the same with JS easily.
 }
-</code></pre>
+</code>
 
 <br/><br/>
 That is it for this quick post. Go out, have some fun, and eat some pie. Happy &pi; day!
