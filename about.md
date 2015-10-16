@@ -15,4 +15,4 @@ permalink: /about/
 
 <center> <h3> Contact Me </h3> </center>
 
-<center> <a herf="mailto:me@dmitrypustovit.com"> me@dmitrypustovit.com </a>  (EDIT: This email address is down, It will be up soon.) </center>
+<center> <a herf="mailto:me@dmitrypustovit.com"> me@dmitrypustovit.com </a> </center>
