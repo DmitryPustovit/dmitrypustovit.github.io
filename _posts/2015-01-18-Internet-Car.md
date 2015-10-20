@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Internet Controlled Car
+summery: An RC car. An Arduino. Two guys with laptops. “Let’s make an internet controlled RC car.” “Eh, sure why not.”
 ---
 
 ![_config.yml]({{ site.baseurl }}/images/Car_Logo.jpg)

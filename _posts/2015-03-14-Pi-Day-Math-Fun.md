@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Pi Day Math Fun
+summery: It's Pi day. Let's find some Pi.
 ---
 
 ![_config.yml]({{ site.baseurl }}/images/pi.jpg)

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Using Hangouts to Call and Text on IOS
+summery: An iOS phone. Google Hangouts. What happens when opposites clash? Lets find out.
 ---
 
 I recently decided I would attempt to use Google hangouts (with Google Voice integrated) for iOS to call and text, and have since still been using.

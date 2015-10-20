@@ -4,14 +4,15 @@ layout: default
 
 <div class="posts">
   {% for post in site.posts %}
-    <article class="post">    
-      
+    <article class="post">
+
       <h1 style="text-align: center;"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
 
       <div class="entry">
-        {{ post.content | truncatewords:40}}
+        {{post.summery}}
+       <!-- //  {{ post.content | truncatewords:40}} -->
       </div>
-      
+
       <center><a href="{{ site.baseurl }}{{ post.url }}" class="read-more" style="color: black; font-size: 16px;">Read More</a></center>
     </article>
   {% endfor %}
