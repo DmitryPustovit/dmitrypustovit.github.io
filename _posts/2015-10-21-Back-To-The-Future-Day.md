@@ -12,4 +12,4 @@ It is today that Marty Mcfly is to arrive in our time in a time traveling DeLore
 
 If you find yourself feeling nostalgic, go see the movies! That’s right some movie theaters have a screening of the movie! Now if you've never seen the movie, now is a perfect time to see this amazing series.
 
-Also it happens that one year ago, I posted my AutoBack article. You can find it [here]({{ site.baseurl }}/Autoback).
+Also it happens that one year ago, I posted my AutoBack article. You can find it [here](http://dmitrypustovit.com/AutoBack/).
