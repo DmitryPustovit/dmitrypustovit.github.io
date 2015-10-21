@@ -8,12 +8,12 @@ layout: default
 
       <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
 
-      <div class="entry">
+      <div class="entry" style="margin-bottom: 10px;">
         {{post.summery}}
        <!-- //  {{ post.content | truncatewords:40}} -->
       </div>
 
-      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more" style="color: black; font-size: 16px;">Read More</a>
+      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more" style="color: black; font-size: 16px; margin-top: 10px;">Read More</a>
     </article>
   {% endfor %}
 </div>
