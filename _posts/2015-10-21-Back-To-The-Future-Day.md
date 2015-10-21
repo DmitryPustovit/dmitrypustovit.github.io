@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Back To The Future Day
-summery: "Great Scott!" "This is heavy!"
+summery: Today's the day. "Great Scott!" "This is heavy!"
 ---
 
 Yes, it's finally the day.
