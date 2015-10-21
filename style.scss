@@ -165,6 +165,14 @@ img {
   }
 }
 
+.hiddenHeader{
+  position: fixed;
+  text-align: center;
+  background: black;
+  width: 100%;
+  top: 0;
+}
+
 .site-avatar {
   float: left;
   width: 70px;
