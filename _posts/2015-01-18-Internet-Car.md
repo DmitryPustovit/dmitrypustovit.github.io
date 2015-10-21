@@ -6,7 +6,7 @@ summery: An RC car. An Arduino. Two guys with laptops. “Let’s make an intern
 
 ![_config.yml]({{ site.baseurl }}/images/Car_Logo.jpg)
 
-Over the winter holidays, a friend and I decided to find out what we could do with an old RC car and an Arduino. Well the word decided is a bit of a simplification, it’s more like I decided and dragged him along but none the less we put our efforts together and decided to see what we can do. My friend’s name is Vishnu and you can find his blog at [vishnumenon.com](vishnumenon.com).
+Over the winter holidays, a friend and I decided to find out what we could do with an old RC car and an Arduino. Well the word decided is a bit of a simplification, it’s more like I decided and dragged him along but none the less we put our efforts together and decided to see what we can do. My friend’s name is Vishnu and you can find his blog at <a href="vishnumenon.com">vishnumenon.com</a>.
 
 ![_config.yml]({{ site.baseurl }}/images/Car_2.jpg)
 The car looked something like this when it was finished.
