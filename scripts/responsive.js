@@ -1,9 +1,9 @@
-$( document ).ready(function() {
+$(".hiddenHeader").hide();
 
-$('.wrapper-masthead').on('scroll', function() {
-    if($(this).scrollTop() + $(this).innerHeight() >= this.scrollHeight) {
-        $('.hiddenHeader').show();
+$(".wrapper-masthead").scroll(function() {
+    if($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight) {
+        $(".hiddenHeader").show();
+    } else {
+        $(".hiddenHeader").hide();
     }
-});
-
 });
