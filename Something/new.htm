@@ -37,8 +37,8 @@ var videoElement = document.querySelector('video');
 navigator.getUserMedia = navigator.getUserMedia ||
   navigator.webkitGetUserMedia || navigator.mozGetUserMedia;    
 
-MediaStreamTrack.getSources(function (media_sources) {
-    for (var i = 0; i < media_sources.length; i++) {
+MediaStreamTrack.getSources(function (sourceInfos) {
+   /* for (var i = 0; i < media_sources.length; i++) {
         var media_source = media_sources[i];
         var constraints = {};
         
@@ -58,7 +58,22 @@ MediaStreamTrack.getSources(function (media_sources) {
                 }]
             };
         }
-
+*/
+      var envSource = sourceInfos.filter(function(sourceInfo) {
+    return sourceInfo.kind == "video"
+        && sourceInfo.facing == "environment";
+  }).reduce(function(a, source) {
+    return source;
+  }, null);
+    
+  var constraints = {
+    audio : false,
+    video : {
+      optional : [{
+        sourceId : envSource ? envSource.id : null
+      }]
+    }
+  };
 
         // invoke getUserMedia to capture this device
         navigator.webkitGetUserMedia(constraints, function (stream) {
@@ -70,7 +85,6 @@ MediaStreamTrack.getSources(function (media_sources) {
 console.log('navigator.getUserMedia error: ', error);
 }); 
     
-    }
 });
        
       
