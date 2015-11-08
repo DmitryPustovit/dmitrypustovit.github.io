@@ -77,8 +77,8 @@ if (!!window.stream) {
   videoElement.src = null;
   window.stream.stop();
 }
-//var videoSource = videoSelect.value;
-var videoSource = 'camera 2';
+var videoSource = videoSelect.value;
+//var videoSource = 'camera 2';
 var constraints = {
   video: {
     optional: [{sourceId: videoSource}]
@@ -93,9 +93,9 @@ start();
       
       
       
-$( document ).ready(function() {
+/*$( document ).ready(function() {
     start();
-  });
+  }); 8/
     </script>
 
 
