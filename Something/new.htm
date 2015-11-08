@@ -26,21 +26,13 @@
 
 <body>
 
-<div id="container">
-
-  <div class="select">
-    <label for="videoSource">Video source: </label><select id="videoSource"></select>
-  </div>
 
   <video muted autoplay></video>
 
   <script>
-'use strict';
 
 var videoElement = document.querySelector('video');
-var videoSelect = document.querySelector('select#videoSource');
-      
-      var videoSource;
+var videoSource;
 
 navigator.getUserMedia = navigator.getUserMedia ||
   navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
@@ -48,22 +40,17 @@ navigator.getUserMedia = navigator.getUserMedia ||
 function gotSources(sourceInfos) {
   for (var i = 0; i !== sourceInfos.length; ++i) {
     var sourceInfo = sourceInfos[i];
-    var option = document.createElement('option');
-    option.value = sourceInfo.id;
-      if (sourceInfo.kind === 'video' && sourceInfo.facing == "environment") {
-videoSource = sourceInfo.id;
-    } else {
-      console.log('Some other kind of source: ', sourceInfo);
+    if (sourceInfo.kind === 'video' && sourceInfo.facing == "environment") {
+        videoSource = sourceInfo.id;
     }
   }
-}
 
-if (typeof MediaStreamTrack === 'undefined'){
-  alert('This browser does not support MediaStreamTrack.\n\nTry Chrome Canary.');
-} else {
-  MediaStreamTrack.getSources(gotSources);
-}
-
+var constraints = {
+      audio: false,
+    video: {
+      optional: [{sourceId: videoSource}]
+    }
+  };
 
 function successCallback(stream) {
   window.stream = stream; // make stream available to console
@@ -75,24 +62,7 @@ function errorCallback(error){
   console.log('navigator.getUserMedia error: ', error);
 }
 
-function start(){
-  if (!!window.stream) {
-    videoElement.src = null;
-    window.stream.stop();
-  }
-
-  var constraints = {
-      audio: false,
-    video: {
-      optional: [{sourceId: videoSource}]
-    }
-  };
-  navigator.getUserMedia(constraints, successCallback, errorCallback);
-}
-
-videoSelect.onchange = start;
-
-start();
+navigator.getUserMedia(constraints, successCallback, errorCallback);
     
     </script>
 
