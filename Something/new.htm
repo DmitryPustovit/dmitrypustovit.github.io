@@ -18,8 +18,13 @@
 
 	<style>
   div.select {
-    margin: 0 0 1em 0;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
   }
+        body{
+             margin: 0;
+    padding: 0
+        }
   </style>
 
 </head>
@@ -27,7 +32,9 @@
 <body>
 
 
-  <video muted autoplay></video>
+  <video muted autoplay style="height:100vh; padding: 0; margin: 0; position: fixed; left: 50%;
+         transform: translateX(-50%);
+        -webkit-transform: translateX(-50%);"></video>
 
   <script>
 'use strict';
@@ -145,6 +152,12 @@ navigator.getUserMedia(constraints, successCallback, errorCallback);
 }
  
 start(); */
+      
+      
+      function autoSize()
+      {
+          
+      }
     
     </script>
 
