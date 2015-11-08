@@ -48,7 +48,7 @@ function gotSources(sourceInfos) {
     var sourceInfo = sourceInfos[i];
     var option = document.createElement('option');
     option.value = sourceInfo.id;
-      if (sourceInfo.kind === 'video') {
+      if (sourceInfo.kind === 'video' && sourceInfo.facing == "environment") {
       option.text = sourceInfo.label || 'camera ' + (videoSelect.length + 1);
       videoSelect.appendChild(option);
     } else {
@@ -79,9 +79,10 @@ function start(){
     videoElement.src = null;
     window.stream.stop();
   }
-  //var videoSource = videoSelect.value;
-    var videoSource = 'camera 1';
+var videoSource = videoSelect.value;
+  //  var videoSource = 'camera 1';
   var constraints = {
+      audio: false,
     video: {
       optional: [{sourceId: videoSource}]
     }
@@ -93,8 +94,8 @@ videoSelect.onchange = start;
 
 start();
       
-      $( document ).ready(function() {  start();
-  });
+   //   $( document ).ready(function() {  start();
+  //});
     
     </script>
 
