@@ -1,82 +1,113 @@
+
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>Camera API</title>
-        <link rel="stylesheet" href="css/base.css" type="text/css" media="screen">
-    </head>
+<head>
 
-    <body>
+<meta name="description" content="Simplest possible examples of HTML, CSS and JavaScript." />
+<meta name="author" content="//samdutton.com">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+<meta itemprop="name" content="simpl.info: simplest possible examples of HTML, CSS and JavaScript">
+<meta itemprop="image" content="/icon_192x192.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta id="theme-color" name="theme-color" content="#fff">
 
-        <div class="container">
-            <h1>Camera API</h1>
+<base target="_blank">
 
-            <section class="main-content">
-                <p>A demo of the Camera API, currently implemented in Firefox and Google Chrome on Android. Choose to take a picture with your device's camera and a preview will be shown through createObjectURL or a FileReader object (choosing local files supported too).</p>
-                
-                <p>
-                    <input type="file" id="take-picture" accept="image/*">
-                </p>
-
-                <h2>Preview:</h2>
-                <p>
-                    <img src="about:blank" alt="" id="show-picture">
-                </p>
-
-                <p id="error"></p>
-
-            </section>
-
-            <p class="footer">All the code is available in the <a href="https://github.com/robnyman/robnyman.github.com/tree/master/camera-api">Camera API repository on GitHub</a>.</p>
-        </div>
+<title></title>
 
 
-        <script>
-        (function () {
-    var takePicture = document.querySelector("#take-picture"),
-        showPicture = document.querySelector("#show-picture");
+	<style>
+  div.select {
+    margin: 0 0 1em 0;
+  }
+  </style>
 
-    if (takePicture && showPicture) {
-        // Set events
-        takePicture.onchange = function (event) {
-            // Get a reference to the taken picture or chosen file
-            var files = event.target.files,
-                file;
-            if (files && files.length > 0) {
-                file = files[0];
-                try {
-                    // Create ObjectURL
-                    var imgURL = window.URL.createObjectURL(file);
+</head>
 
-                    // Set img src to ObjectURL
-                    showPicture.src = imgURL;
+<body>
 
-                    // Revoke ObjectURL
-                    URL.revokeObjectURL(imgURL);
-                }
-                catch (e) {
-                    try {
-                        // Fallback if createObjectURL is not supported
-                        var fileReader = new FileReader();
-                        fileReader.onload = function (event) {
-                            showPicture.src = event.target.result;
-                        };
-                        fileReader.readAsDataURL(file);
-                    }
-                    catch (e) {
-                        //
-                        var error = document.querySelector("#error");
-                        if (error) {
-                            error.innerHTML = "Neither createObjectURL or FileReader are supported";
-                        }
-                    }
-                }
-            }
-        };
+<div id="container">
+
+  <div class="select">
+    <label for="audioSource">Audio source: </label><select id="audioSource"></select>
+  </div>
+
+  <div class="select">
+    <label for="videoSource">Video source: </label><select id="videoSource"></select>
+  </div>
+
+  <video muted autoplay></video>
+
+  <script>
+    'use strict';
+
+var videoElement = document.querySelector('video');
+var audioSelect = document.querySelector('select#audioSource');
+var videoSelect = document.querySelector('select#videoSource');
+
+navigator.getUserMedia = navigator.getUserMedia ||
+  navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
+
+function gotSources(sourceInfos) {
+  for (var i = 0; i !== sourceInfos.length; ++i) {
+    var sourceInfo = sourceInfos[i];
+    var option = document.createElement('option');
+    option.value = sourceInfo.id;
+    if (sourceInfo.kind === 'audio') {
+      option.text = sourceInfo.label || 'microphone ' + (audioSelect.length + 1);
+      audioSelect.appendChild(option);
+    } else if (sourceInfo.kind === 'video') {
+      option.text = sourceInfo.label || 'camera ' + (videoSelect.length + 1);
+      videoSelect.appendChild(option);
+    } else {
+      console.log('Some other kind of source: ', sourceInfo);
     }
-})();
-        </script>
+  }
+}
+
+if (typeof MediaStreamTrack === 'undefined'){
+  alert('This browser does not support MediaStreamTrack.\n\nTry Chrome Canary.');
+} else {
+  MediaStreamTrack.getSources(gotSources);
+}
 
 
-    </body>
+function successCallback(stream) {
+  window.stream = stream; // make stream available to console
+  videoElement.src = window.URL.createObjectURL(stream);
+  videoElement.play();
+}
+
+function errorCallback(error){
+  console.log('navigator.getUserMedia error: ', error);
+}
+
+function start(){
+  if (!!window.stream) {
+    videoElement.src = null;
+    window.stream.stop();
+  }
+  var audioSource = audioSelect.value;
+  var videoSource = videoSelect.value;
+  var constraints = {
+    audio: {
+      optional: [{sourceId: audioSource}]
+    },
+    video: {
+      optional: [{sourceId: videoSource}]
+    }
+  };
+  navigator.getUserMedia(constraints, successCallback, errorCallback);
+}
+
+audioSelect.onchange = start;
+videoSelect.onchange = start;
+
+start();
+    </script>
+
+
+</div>
+
+</body>
 </html>
