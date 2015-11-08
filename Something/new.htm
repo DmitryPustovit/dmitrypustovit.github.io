@@ -14,8 +14,6 @@
 <base target="_blank">
 
 <title></title>
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
 
 	<style>
@@ -37,64 +35,67 @@
   <video muted autoplay></video>
 
   <script>
-     'use strict';
+'use strict';
 
 var videoElement = document.querySelector('video');
 var videoSelect = document.querySelector('select#videoSource');
 
 navigator.getUserMedia = navigator.getUserMedia ||
-navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
+  navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
 
 function gotSources(sourceInfos) {
-for (var i = 0; i !== sourceInfos.length; ++i) {
-  var sourceInfo = sourceInfos[i];
-  var option = document.createElement('option');
-  option.value = sourceInfo.id;
-    option.text = sourceInfo.label || 'camera ' + (videoSelect.length + 1);
-    videoSelect.appendChild(option);
-}
+  for (var i = 0; i !== sourceInfos.length; ++i) {
+    var sourceInfo = sourceInfos[i];
+    var option = document.createElement('option');
+    option.value = sourceInfo.id;
+      if (sourceInfo.kind === 'video') {
+      option.text = sourceInfo.label || 'camera ' + (videoSelect.length + 1);
+      videoSelect.appendChild(option);
+    } else {
+      console.log('Some other kind of source: ', sourceInfo);
+    }
+  }
 }
 
 if (typeof MediaStreamTrack === 'undefined'){
-alert('This browser does not support MediaStreamTrack.\n\nToo Bad.');
+  alert('This browser does not support MediaStreamTrack.\n\nTry Chrome Canary.');
 } else {
-MediaStreamTrack.getSources(gotSources);
+  MediaStreamTrack.getSources(gotSources);
 }
 
 
 function successCallback(stream) {
-window.stream = stream;
-videoElement.src = window.URL.createObjectURL(stream);
-videoElement.play();
+  window.stream = stream; // make stream available to console
+  videoElement.src = window.URL.createObjectURL(stream);
+  videoElement.play();
 }
 
 function errorCallback(error){
-console.log('navigator.getUserMedia error: ', error);
+  console.log('navigator.getUserMedia error: ', error);
 }
 
 function start(){
-if (!!window.stream) {
-  videoElement.src = null;
-  window.stream.stop();
-}
-var videoSource = videoSelect.value;
-//var videoSource = 'camera 2';
-var constraints = {
-  video: {
-    optional: [{sourceId: videoSource}]
+  if (!!window.stream) {
+    videoElement.src = null;
+    window.stream.stop();
   }
-};
-navigator.getUserMedia(constraints, successCallback, errorCallback);
+  //var videoSource = videoSelect.value;
+    var videoSource = 'camera 1';
+  var constraints = {
+    video: {
+      optional: [{sourceId: videoSource}]
+    }
+  };
+  navigator.getUserMedia(constraints, successCallback, errorCallback);
 }
 
 videoSelect.onchange = start;
 
 start();
       
-      
-      
-//$( document ).ready(function() {  start();
-//  });
+      $( document ).ready(function() {  start();
+  });
+    
     </script>
 
 
