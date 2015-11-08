@@ -41,14 +41,21 @@ navigator.getUserMedia = navigator.getUserMedia ||
       
 /* && sourceInfo.facing == "environment" */
 
-function gotSources(sourceInfos) {
+/*function gotSources(sourceInfos) {
   for (var i = 0; i !== sourceInfos.length; ++i) {
     var sourceInfo = sourceInfos[i];
     if (sourceInfo.kind === 'video' && sourceInfo.facing == 'environment') {
         videoSource = sourceInfo.id;
     }
   }
-}
+}*/
+      
+var videoSource = sourceInfos.filter(function(sourceInfo) {
+    return sourceInfo.kind == "video"
+        && sourceInfo.facing == "environment";
+  }).reduce(function(a, source) {
+    return source;
+  }, null);
     
 if (typeof MediaStreamTrack === 'undefined'){
 alert('This browser does not support MediaStreamTrack.\n\nToo Bad.');
