@@ -45,7 +45,7 @@ navigator.getUserMedia = navigator.getUserMedia ||
 
 function gotSources(sourceInfos) {
   for (var i = 2; i !== sourceInfos.length; --i) {
-    var sourceInfo = sourceInfos[2];
+    var sourceInfo = sourceInfos[i];
     var option = document.createElement('option');
     option.value = sourceInfo.id;
       option.text = sourceInfo.label || 'camera ' + (videoSelect.length + 1);
