@@ -14,6 +14,8 @@
 <base target="_blank">
 
 <title></title>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
 
 	<style>
@@ -44,13 +46,13 @@ navigator.getUserMedia = navigator.getUserMedia ||
 navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
 
 function gotSources(sourceInfos) {
-//for (var i = 0; i !== sourceInfos.length; ++i) {
-  var sourceInfo = sourceInfos[1];
+for (var i = 0; i !== sourceInfos.length; ++i) {
+  var sourceInfo = sourceInfos[i];
   var option = document.createElement('option');
   option.value = sourceInfo.id;
     option.text = sourceInfo.label || 'camera ' + (videoSelect.length + 1);
     videoSelect.appendChild(option);
-//}
+}
 }
 
 if (typeof MediaStreamTrack === 'undefined'){
@@ -75,8 +77,8 @@ if (!!window.stream) {
   videoElement.src = null;
   window.stream.stop();
 }
-var videoSource = videoSelect.value;
-//var videoSource = 'camera 2';
+//var videoSource = videoSelect.value;
+var videoSource = 'camera 2';
 var constraints = {
   video: {
     optional: [{sourceId: videoSource}]
@@ -88,6 +90,12 @@ navigator.getUserMedia(constraints, successCallback, errorCallback);
 videoSelect.onchange = start;
 
 start();
+      
+      
+      
+$( document ).ready(function() {
+    start();
+  });
     </script>
 
 
