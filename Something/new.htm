@@ -44,13 +44,13 @@ navigator.getUserMedia = navigator.getUserMedia ||
   navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
 
 function gotSources(sourceInfos) {
-  for (var i = 1; i !== sourceInfos.length; --i) {
-    var sourceInfo = sourceInfos[i];
+  //for (var i = 1; i !== sourceInfos.length; --i) {
+    var sourceInfo = sourceInfos[2];
     var option = document.createElement('option');
     option.value = sourceInfo.id;
       option.text = sourceInfo.label || 'camera ' + (videoSelect.length + 1);
       videoSelect.appendChild(option);
-  }
+  //}
 }
 
 if (typeof MediaStreamTrack === 'undefined'){
