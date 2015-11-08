@@ -30,45 +30,47 @@
   <video muted autoplay></video>
 
   <script>
-
+'use strict';
+      
 var videoElement = document.querySelector('video');
+var videoSource;
 
 navigator.getUserMedia = navigator.getUserMedia ||
   navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
       
       
-      MediaStreamTrack.getSources(function(sourceInfos) {
-  var videoSourceId;
-                for (var i = 0; i != sourceInfos.length; ++i) {
-                  var sourceInfo = sourceInfos[i];
-                  if(sourceInfo.kind == "video" && sourceInfo.facing == "environment") {
-                    videoSourceId = sourceInfo.id;
-                  }
-                }
-                var constraints = {
-                  audio: false,
-                  video: {
-                    optional: [{sourceId: videoSourceId}]
-                  }
-                };}
-                                 ,
+/* && sourceInfo.facing == "environment" */
 
-                function successCallback(stream) {
-    window.stream = stream; // make stream available to console
-    videoElement.src = window.URL.createObjectURL(stream);
-    videoElement.play();
-  },
-  function errorCallback(error){
-  console.log('navigator.getUserMedia error: ', error);
-});
-
-/*function gotSources(sourceInfos) {
+function gotSources(sourceInfos) {
   for (var i = 0; i !== sourceInfos.length; ++i) {
     var sourceInfo = sourceInfos[i];
-    if (sourceInfo.kind === 'video' && sourceInfo.facing == "environment") {
+    if (sourceInfo.kind === 'video') {
         videoSource = sourceInfo.id;
     }
   }
+}
+    
+if (typeof MediaStreamTrack === 'undefined'){
+alert('This browser does not support MediaStreamTrack.\n\nToo Bad.');
+} else {
+MediaStreamTrack.getSources(gotSources);
+}
+
+function successCallback(stream) {
+window.stream = stream;
+videoElement.src = window.URL.createObjectURL(stream);
+videoElement.play();
+}
+
+function errorCallback(error){
+console.log('navigator.getUserMedia error: ', error);
+}
+    
+function start(){
+if (!!window.stream) {
+ videoElement.src = null;
+ window.stream.stop();
+}
 
 var constraints = {
       audio: false,
@@ -77,17 +79,10 @@ var constraints = {
     }
   };
 
-function successCallback(stream) {
-  window.stream = stream; // make stream available to console
-  videoElement.src = window.URL.createObjectURL(stream);
-  videoElement.play();
+navigator.getUserMedia(constraints, successCallback, errorCallback); 
 }
-
-function errorCallback(error){
-  console.log('navigator.getUserMedia error: ', error);
-}
-
-navigator.getUserMedia(constraints, successCallback, errorCallback); */
+ 
+start();
     
     </script>
 
