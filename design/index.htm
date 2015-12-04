@@ -7,27 +7,49 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
     <title>Behind the Design</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+      <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    <script>
+      $(document).ready(function() {
 
-    <!-- Bootstrap -->
+          $(function() {
+	$("<pre />", {
+            "html":   '&lt;!DOCTYPE html>\n&lt;html>\n' +
+                    $("html")
+                        .html()
+                        .replace(/[<>]/g, function(m) { return {'<':'&lt;','>':'&gt;'}[m]})
+                        .replace(/((ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?)/gi,'<a href="$1">$1</a>') +
+                    '\n&lt;/html>'
+        }).appendTo("#source-code");
+    });
+          
+        $("pre").addClass( "prettyprint" );
+
+       });
+    </script>
   </head>
   <body style="border: 0; margin: 0; font-family: 'Raleway', sans-serif; background: #e67e22; color: white;">
     <div style=" position: absolute; width: 100%; color: white; z-index: 20; top: 0px; font-family: 'Raleway', sans-serif; background: #e67e22;"><h1 style="text-align: center;"> Behind the Design </h1></div>
     <div class="main" style="position: absolute; height: 100%; width: 100%;">
-        <div class="left" style="float:left; width: 50%; height: 100%;">
-          <iframe src="http://heliumdesign.agency/positive-proteins" width="100%" height="100%" style="border: none; overflow: hidden;" scrolling="no" seamless="seamless"></iframe>
+        <div class="left" style="float:left; width: 50%; height: 100%; overflow: hidden;">
+            <br/><br/><br/><br/>
+            
+          <iframe src="http://heliumdesign.agency/positive-proteins" id="iframe_id" width="100%" height="100%" style="border: none; overflow: hidden;" scrolling="no" seamless="seamless"></iframe>
         </div>
-        <div class="right" style="float:right; width: 50%; height: 100%;">
-          <img src="code.jpg" style="width:100%; height:100%; border: none; overflow: hidden; min-height: 100%; min-width: 100%;">
+        <div class="right"  style="float:right; width: 50%; height: 100%; overflow-y: scroll; background: white;">
+            <br/><br/><br/><br/>
+            <pre class="prettyprint" id="source-code" style="border:none;"></pre>
         </div>
     </div>
     <div style="position: absolute; top: 100%; width: 100%;">
       <br/><br/><br/><br/>
       <center> <h2> There is a whole world hidden from your eyes. </h2> </center>
-      <center> Next time you vist a fancy looking website, left click on the website and click VIEW SOURCE! </center>
+        <center>         <h3> There is more to design then you may think. It is mar more complex to understand but,<br/> it isn't impossible to understand. </h3> </center>
+      <center> Next time you vist a fancy looking website, left click on the website and click VIEW PAGE SOURCE! </center>
       <br/>
       <center><img src="clicky.png" style="width: 200px;"></center>
       <br/>
-     <center> Discover the world around you! </center>
+     <center> Discover how design affects how you see information.</center>
      <br/><br/><br/><br/>
    </div>
   </body>
