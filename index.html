@@ -10,7 +10,7 @@
     <link href='https://fonts.googleapis.com/css?family=Muli:300' rel='stylesheet' type='text/css'>
     <style>
       @import url(https://fonts.googleapis.com/css?family=Oxygen:400,300);
-        body{margin: 0;}
+        body{margin: 0;background-color: #2980b9;}
         h1
         {
             font-family: 'Muli', sans-serif; font-weight:300;
@@ -21,10 +21,11 @@
         {
             position: absolute;
             top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            -webkit-transform: translate(-50%, -50%);
-            
+            //left: 50%;
+            transform: translateY(-50%);
+            -webkit-transform: translateY(-50%);
+            width: 100%;
+            background-color: white;
         }
         p
         {
@@ -37,14 +38,14 @@
         @media (min-width: 400px) {
             .main
             {
-                min-width: 400px;
+                //min-width: 400px;
             }
         }
         
         @media (min-height: 500px) {
             .main
             {
-                padding-bottom: 100px;
+                //padding-bottom: 100px;
             }
         }
       </style>
@@ -55,8 +56,8 @@
     <![endif]-->
   </head>
   <body>
-      <div class="main">
-          <h1 style="padding-top: 10px; margin-bottom: 0; margin-top: 50px;">Welcome!</h1>
+      <div class="main" style="padding-top: 40px; padding-bottom: 40px;">
+          <h1 style="padding-top: 10px; margin-top: 0; margin-bottom: 0;">Welcome!</h1>
           <p style="font-size: 24px;">...to my Personal Site and Blog. </p>
           <div style="color: #27ae60; letter-spacing: 2px;font-family: 'Oxygen', sans-serif; font-weight:300;text-align: center;line-height: 32px; font-size:20px;"> <br/> < &#33; - -  Note To Self: Add Site...  - - > </div>
           <p> <br/>If you would like to contact me, <br/>please do so at: <br/> <br/> me@DmitryPustovit.com </p>
