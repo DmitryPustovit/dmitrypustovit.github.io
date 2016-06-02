@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -37,22 +38,11 @@ font-family: 'Quicksand', sans-serif;
             -webkit-transform: translate(-50%, -50%);
             //width: 100%;
             //background-color: white;
-            -webkit-touch-callout: none; /* iOS Safari */
-              -webkit-user-select: none;   /* Chrome/Safari/Opera */
-              -khtml-user-select: none;    /* Konqueror */
-              -moz-user-select: none;      /* Firefox */
-              -ms-user-select: none;       /* Internet Explorer/Edge */
-              user-select: none; 
-            cursor: pointer;
-                    }
+        }
         td{
          margin: 0;  
          padding: 10px 30px;
          font-size: 40px;
-            color:white;
-            width: 26px;
-            height: 59px;
-            text-align: center;
         }
         .bot{
          border-bottom: solid 1px #34495e;   
@@ -79,44 +69,26 @@ font-family: 'Quicksand', sans-serif;
     <div class="game">
         <table>
           <tr>
-            <td class="bot right" id="r1c1"> O </td>
-            <td class="bot" id="r1c2">  </td>
-            <td class="bot left" id="r1c3" >  </td>
+            <td class="bot right" id="r1c1" style="color: #e74c3c;"> X</td>
+            <td class="bot" id="r1c2" style="color: #3498db;"> O </td>
+            <td class="bot left" id="r1c3" style="color: #e74c3c;"> X </td>
           </tr>
 
           <tr>
-            <td class="right" id="r2c1">  </td>
-            <td id="r2c2">  </td>
-            <td class="left" id="r2c3">  </td>
+            <td class="right" id="r2c1" style="color: #3498db;"> O </td>
+            <td id="r2c2" style="color: #3498db;"> O </td>
+            <td class="left" id="r2c3" style="color: #e74c3c;"> X </td>
           </tr>
 
           <tr>
-            <td class="top right" id="r3c1">  </td>
-            <td class="top" id="r3c2">  </td>
-            <td class="top left" id="r3c3">  </td>
+            <td class="top right" id="r3c1" style="color: #3498db;"> O </td>
+            <td class="top" id="r3c2" style="color: #e74c3c;"> X </td>
+            <td class="top left" id="r3c3" style="color: #e74c3c;"> X </td>
           </tr>
         </table>
       </div>
 
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-      <script>
-          var player1 = true; 
-          $('td').click(function (event){
-              if(player1)
-              {
-                  $(this).html("X");
-                  $(this).css("color" , "#e74c3c");
-                  player1 = !player1;
-              }
-              else
-              {
-                  $(this).html("O");
-                  $(this).css("color" , "#3498db");
-                  player1 = !player1;
-              }
-              //3498db
-          });
-      </script>
   </body>
 </html>
