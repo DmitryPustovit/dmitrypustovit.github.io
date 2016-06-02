@@ -103,18 +103,26 @@ font-family: 'Quicksand', sans-serif;
       <script>
           var player1 = true; 
           $('td').click(function (event){
-              if(player1)
-              {
-                  $(this).html("X");
-                  $(this).css("color" , "#e74c3c");
-                  player1 = !player1;
-              }
+              if($(this).hasClass( "marked" ))
+                {
+                }
               else
-              {
-                  $(this).html("O");
-                  $(this).css("color" , "#3498db");
-                  player1 = !player1;
-              }
+                {
+                      if(player1)
+                      {
+                          $(this).html("X");
+                          $(this).css("color" , "#e74c3c");
+                          $(this).addClass("marked");
+                          player1 = !player1;
+                      }
+                      else
+                      {
+                          $(this).html("O");
+                          $(this).css("color" , "#3498db");
+                          $(this).addClass("marked");
+                          player1 = !player1;
+                      }
+                }
               //3498db
           });
       </script>
