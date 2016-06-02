@@ -51,7 +51,7 @@ font-family: 'Quicksand', sans-serif;
          padding: 10px 30px;
          font-size: 40px;
             color:white;
-            width: 26px;
+            width: 30px;
             height: 59px;
             text-align: center;
         }
@@ -67,6 +67,15 @@ font-family: 'Quicksand', sans-serif;
         .left{
         border-left: solid 1px #34495e;   
         }
+        .win{
+        position: absolute;
+            height: 60px;     
+         width: 300px;   
+                        top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -webkit-transform: translate(-50%, -50%);
+        } 
       </style>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -78,23 +87,27 @@ font-family: 'Quicksand', sans-serif;
   </head>
   <body>
     <div class="game">
+       <!--   <div class="win"> <svg style='width: 100%; height: 50%;'>
+            <line x1="0" y1="100%" x2="100%" y2="100%"
+                style="stroke:rgb(255,0,0);stroke-width:2"/>
+        </svg> </div> -->
         <table>
           <tr>
-            <td class="bot right" id="r1c1"> O </td>
-            <td class="bot" id="r1c2">  </td>
-            <td class="bot left" id="r1c3" >  </td>
+            <td class="bot right" id="r1c1"></td>
+            <td class="bot" id="r1c2"></td>
+            <td class="bot left" id="r1c3" ></td>
           </tr>
 
           <tr>
-            <td class="right" id="r2c1">  </td>
-            <td id="r2c2">  </td>
-            <td class="left" id="r2c3">  </td>
+            <td class="right" id="r2c1"></td>
+            <td id="r2c2"></td>
+            <td class="left" id="r2c3"></td>
           </tr>
 
           <tr>
-            <td class="top right" id="r3c1">  </td>
-            <td class="top" id="r3c2">  </td>
-            <td class="top left" id="r3c3">  </td>
+            <td class="top right" id="r3c1"></td>
+            <td class="top" id="r3c2"></td>
+            <td class="top left" id="r3c3"></td>
           </tr>
         </table>
       </div>
@@ -102,6 +115,13 @@ font-family: 'Quicksand', sans-serif;
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
       <script>
+         // $(function() {
+          //     console.log( "ready!" );
+             // var pos = $('table').position();
+             // $('.win').css("left" , pos.left);
+             // $('.win').css("top" , pos.top);
+         //   });
+
           var player1 = true; 
           $('td').click(function (event){
               if($(this).hasClass( "marked" ))
