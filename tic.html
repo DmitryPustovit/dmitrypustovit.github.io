@@ -110,6 +110,22 @@ font-family: 'Quicksand', sans-serif;
               width: 244px;
               text-align: center;
           }
+          .alert
+          {
+                            position: absolute;
+                          top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -webkit-transform: translate(-50%, -50%);
+            width: 100%;
+            text-align: center;
+              font-family: 'Quicksand', sans-serif;
+                            text-align: center;
+              background-color: #34495e;
+              color: white;
+              padding: 20px 0;
+              display: none;
+          }
       </style>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -153,6 +169,7 @@ font-family: 'Quicksand', sans-serif;
       </div>
       <div class="aiToggle" onclick="aiToggle()"> Toggle AI </div>
       <div class="reset" onclick="reset()"> Reset </div>
+      <div class="alert"> AI is Disabled </div>
 
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -314,9 +331,20 @@ function reset() {
               }
           function aiToggle()
           {
-           alert("AI is disabled.");   
+           showAlert("AI is disabled.");   
           }
           
+          function showAlert(text)
+          {
+              var box = $(".alert");  
+              box.html(text);
+              box.show();
+              setTimeout(
+              function() 
+              {
+                box.fadeOut( "slow", function() {});
+              }, 1500);
+          }
       </script>
   </body>
 </html>
