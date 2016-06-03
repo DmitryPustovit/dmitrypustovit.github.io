@@ -144,6 +144,12 @@ font-family: 'Quicksand', sans-serif;
               -ms-user-select: none;       /* Internet Explorer/Edge */
               user-select: none; 
           }
+          .settings{
+                position: absolute;
+                top: 30px;
+                left: 30px;
+              cursor: pointer;
+          }
           
             @media (max-height: 700px) {
                 .aiToggle{
@@ -199,6 +205,13 @@ font-family: 'Quicksand', sans-serif;
       <div class="aiToggle" onclick="aiToggle()"> Toggle AI </div>
       <div class="reset" onclick="reset()"> Reset </div>
       <div class="alert"> AI is Disabled </div>
+     <!--  <div class="settings">
+      
+        <svg fill="#bdc3c7" height="60" viewBox="0 0 24 24" width="60" xmlns="http://www.w3.org/2000/svg" >
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M19.43 12.98c.04-.32.07-.64.07-.98s-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.46 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.49.42l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98s.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.03.24.24.42.49.42h4c.25 0 .46-.18.49-.42l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.23.09.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65zM12 15.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z"/>
+        </svg>
+      </div> --> 
 
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -215,6 +228,8 @@ font-family: 'Quicksand', sans-serif;
           var player1 = true; 
           var check = false;
           var winningLine = 0; 
+          var aiEnabled = false;
+          var turn = 0;
           
           $('td').click(function (event){
               if($(this).hasClass( "marked" ))
@@ -228,15 +243,24 @@ font-family: 'Quicksand', sans-serif;
                           $(this).css("color" , "#e74c3c");
                           $(this).addClass("marked");
                           $(this).addClass("p1");
-                          player1 = !player1;
+                          turn++;
+                          if(aiEnabled)
+                              randomAI();
+                          else
+                          {
+                            player1 = !player1;
+                              console.log("O");
+                          }
+                          
                       }
                       else
                       {
-                          $(this).html("O");
+                        $(this).html("O");
                           $(this).css("color" , "#3498db");
                           $(this).addClass("marked");
                           $(this).addClass("p2");
                           player1 = !player1;
+                          
                       }
                 }
               
@@ -362,11 +386,26 @@ function reset() {
                   player1 = true; 
                   check = false;
                   winningLine = 0; 
+                turn = 0;
               }
           function aiToggle()
           {
-           showAlert("AI is disabled.");   
+            aiEnabled = !aiEnabled;
+            var text;
+              if(aiEnabled)
+                  text = "AI is Enabled : Random AI";
+              else
+                  text = " AI is Disabled";
+              console.log(text);
+            showAlert(text);   
+              //showAlert(aiEnabled);   
+              reset();
+              
           }
+          
+          $('.settings').click(function (){
+             showAlert("Settings have not yet been added.");    
+          });
           
           function showAlert(text)
           {
@@ -378,6 +417,29 @@ function reset() {
               {
                 box.fadeOut( "slow", function() {});
               }, 1500);
+          }
+          
+          
+          //Super Basic Ai that just plots its move into a random point if the point is not already marked.
+          function randomAI()
+          {
+              var randomPosisiton;
+              if(turn < 8)
+              {
+                  do
+                  {
+                    randomPosisiton = Math.floor(Math.random() * sqaures.length);
+                  }
+                  while($(sqaures[randomPosisiton]).hasClass("marked"));
+
+                        $(sqaures[randomPosisiton]).html("O");
+                              $(sqaures[randomPosisiton]).css("color" , "#3498db");
+                              $(sqaures[randomPosisiton]).addClass("marked");
+                              $(sqaures[randomPosisiton]).addClass("p2");
+                            turn++;
+                              //player1 = !player1;
+              }
+              
           }
       </script>
   </body>
