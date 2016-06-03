@@ -94,6 +94,10 @@ font-family: 'Quicksand', sans-serif;
                 style="display:none; stroke:rgb(255,0,0);stroke-width:1"/>
             <line class="lineV" x1="50%" y1="0%" x2="50%" y2="100%"
                 style="display:none; stroke:rgb(255,0,0);stroke-width:1"/>
+          <line class="lineL" x1="10%" y1="10%" x2="90%" y2="90%"
+                style="display:none; stroke:rgb(255,0,0);stroke-width:1"/>
+          <line class="lineR" x1="90%" y1="90%" x2="10%" y2="10%"
+                style="display:none; stroke:rgb(255,0,0);stroke-width:1"/>
         </svg> </div> 
         <table>
           <tr>
@@ -196,6 +200,8 @@ font-family: 'Quicksand', sans-serif;
               var lineDiv = $(".win");
               var lineH = $(".lineH");
               var lineV = $(".lineV");
+              var lineL = $(".lineL");
+              var lineR = $(".lineR");
               var line = $("line");
               var player; 
               
@@ -225,6 +231,14 @@ font-family: 'Quicksand', sans-serif;
                       lineDiv.show();
                       lineDiv.css("padding-top" , "158px");
                       lineH.show();
+                      break;
+                  case 4:
+                      lineDiv.show();
+                      lineL.show();
+                      break;
+                  case 5:
+                      lineDiv.show();
+                      lineR.show();
                       break;
                   case 6:
                       lineDiv.show();
