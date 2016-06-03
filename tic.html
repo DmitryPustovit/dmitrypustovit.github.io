@@ -244,46 +244,64 @@ font-family: 'Quicksand', sans-serif;
                           $(this).addClass("marked");
                           $(this).addClass("p1");
                           turn++;
-                          if(aiEnabled)
-                              randomAI();
-                          else
-                          {
-                            player1 = !player1;
-                              console.log("O");
-                          }
+                          player1 = !player1;
                           
                       }
                       else
                       {
+                        if(!aiEnabled)
+                          {
                         $(this).html("O");
                           $(this).css("color" , "#3498db");
                           $(this).addClass("marked");
                           $(this).addClass("p2");
+                              
+                          }
+                          else
+                          {
+                              $(this).html("X");
+                              $(this).css("color" , "#e74c3c");
+                              $(this).addClass("marked");
+                              $(this).addClass("p1");
+                              turn++; 
+                          }
                           player1 = !player1;
+                              
+                          
                           
                       }
                 }
               
-              var line = 0; 
-              for(i =0; i <= sqaures.length - 1; i+=3)
+              function checkIfWon()
               {
-                  line++;
-                
-                  //console.log(i);
-                  for(k = 0; k <= 1; k++)
+                  var line = 0; 
+                  for(i =0; i <= sqaures.length - 1; i+=3)
                   {
-                      if(checkForWinner(sqaures[i], sqaures[i+1], sqaures[i+2], players[k]))
+                      line++;
+
+                      //console.log(i);
+                      for(k = 0; k <= 1; k++)
                       {
-                            check = true;
-                            winningLine = line;
-                            console.log(winningLine);
+                          if(checkForWinner(sqaures[i], sqaures[i+1], sqaures[i+2], players[k]))
+                          {
+                                check = true;
+                                winningLine = line;
+                                console.log(winningLine);
+                          }
                       }
                   }
+                  if(check)
+                     hasWon();
               }
-              if(check)
-                 hasWon();
+              checkIfWon();
                 //alert("A Player has Won!");
               //3498db */
+              
+                 if(aiEnabled)
+                 {
+                    randomAI();
+                     checkIfWon();
+                 }
           });
           
           
@@ -424,7 +442,7 @@ function reset() {
           function randomAI()
           {
               var randomPosisiton;
-              if(turn < 8)
+              if(turn < 8 && check == false)
               {
                   do
                   {
