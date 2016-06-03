@@ -86,11 +86,29 @@ font-family: 'Quicksand', sans-serif;
             left: 50%;
             transform: translate(-50%, -50%);
             -webkit-transform: translate(-50%, -50%);
-            margin-top: 200px;
+            margin-top: 250px;
               font-family: 'Quicksand', sans-serif;
               font-size: 30px;
               font-weight: 300;
               border: solid 0.01em #34495e;
+              cursor: pointer;
+          }
+        .aiToggle
+          {
+           padding: 20px 0px;   
+              position: absolute;
+                          top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -webkit-transform: translate(-50%, -50%);
+                margin-top: -250px;
+              font-family: 'Quicksand', sans-serif;
+              font-size: 30px;
+              font-weight: 300;
+              border: solid 0.01em #34495e;
+              cursor: pointer;
+              width: 244px;
+              text-align: center;
           }
       </style>
 
@@ -133,6 +151,7 @@ font-family: 'Quicksand', sans-serif;
           </tr>
         </table>
       </div>
+      <div class="aiToggle" onclick="aiToggle()"> Toggle AI </div>
       <div class="reset" onclick="reset()"> Reset </div>
 
     <!-- jQuery -->
@@ -289,6 +308,10 @@ function reset() {
                   check = false;
                   winningLine = 0; 
               }
+          function aiToggle()
+          {
+           alert("AI is disabled.");   
+          }
           
       </script>
   </body>
