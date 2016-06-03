@@ -78,6 +78,20 @@ font-family: 'Quicksand', sans-serif;
             //padding-bottom: 158px;
             display: none;
         } 
+        .reset
+          {
+           padding: 20px 80px;   
+              position: absolute;
+                          top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -webkit-transform: translate(-50%, -50%);
+            margin-top: 200px;
+              font-family: 'Quicksand', sans-serif;
+              font-size: 30px;
+              font-weight: 300;
+              border: solid 0.01em #34495e;
+          }
       </style>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -119,6 +133,7 @@ font-family: 'Quicksand', sans-serif;
           </tr>
         </table>
       </div>
+      <div class="reset" onclick="reset()"> Reset </div>
 
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -257,7 +272,24 @@ font-family: 'Quicksand', sans-serif;
               }
               
               //alert("Player " + player + " has Won!   ");  
+            
           }
+          
+function reset() {
+                  $("table *").removeClass("marked");
+                  $("table *").removeClass("p1");
+                  $("table *").removeClass("p2");
+                  $("table *").css("color", "white");
+                  $(".lineH").hide();
+                  $(".lineV").hide();
+                  $(".lineL").hide();
+                  $(".lineR").hide();
+                  $(".win").hide();
+                  player1 = true; 
+                  check = false;
+                  winningLine = 0; 
+              }
+          
       </script>
   </body>
 </html>
