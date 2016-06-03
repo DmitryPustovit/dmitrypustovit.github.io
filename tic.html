@@ -82,26 +82,32 @@ font-family: 'Quicksand', sans-serif;
           {
            padding: 20px 80px;   
               position: absolute;
-                          top: 50%;
+                          bottom: 100px;
             left: 50%;
-            transform: translate(-50%, -50%);
-            -webkit-transform: translate(-50%, -50%);
-            margin-top: 250px;
+            transform: translateX(-50%);
+            -webkit-transform: translateX(-50%);
+            //margin-top: 250px;
               font-family: 'Quicksand', sans-serif;
               font-size: 30px;
               font-weight: 300;
               border: solid 0.01em #34495e;
               cursor: pointer;
+                          -webkit-touch-callout: none; /* iOS Safari */
+              -webkit-user-select: none;   /* Chrome/Safari/Opera */
+              -khtml-user-select: none;    /* Konqueror */
+              -moz-user-select: none;      /* Firefox */
+              -ms-user-select: none;       /* Internet Explorer/Edge */
+              user-select: none; 
           }
         .aiToggle
           {
            padding: 20px 0px;   
               position: absolute;
-                          top: 50%;
+                          top: 100px;
             left: 50%;
-            transform: translate(-50%, -50%);
-            -webkit-transform: translate(-50%, -50%);
-                margin-top: -250px;
+            transform: translateX(-50%);
+            -webkit-transform: translateX(-50%);
+                //margin-top: -250px;
               font-family: 'Quicksand', sans-serif;
               font-size: 30px;
               font-weight: 300;
@@ -109,6 +115,12 @@ font-family: 'Quicksand', sans-serif;
               cursor: pointer;
               width: 244px;
               text-align: center;
+                          -webkit-touch-callout: none; /* iOS Safari */
+              -webkit-user-select: none;   /* Chrome/Safari/Opera */
+              -khtml-user-select: none;    /* Konqueror */
+              -moz-user-select: none;      /* Firefox */
+              -ms-user-select: none;       /* Internet Explorer/Edge */
+              user-select: none; 
           }
           .alert
           {
@@ -125,7 +137,24 @@ font-family: 'Quicksand', sans-serif;
               color: white;
               padding: 20px 0;
               display: none;
+                          -webkit-touch-callout: none; /* iOS Safari */
+              -webkit-user-select: none;   /* Chrome/Safari/Opera */
+              -khtml-user-select: none;    /* Konqueror */
+              -moz-user-select: none;      /* Firefox */
+              -ms-user-select: none;       /* Internet Explorer/Edge */
+              user-select: none; 
           }
+          
+            @media (max-height: 700px) {
+                .aiToggle{
+                    top: 60px;
+                }
+                
+                .reset{
+                    bottom: 60px;   
+                }
+                
+            }
       </style>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
