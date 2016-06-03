@@ -94,21 +94,21 @@ font-family: 'Quicksand', sans-serif;
         </svg> </div> -->
         <table>
           <tr>
-            <td class="bot right c1 c10"></td>
-            <td class="bot c2"></td>
-            <td class="bot left c3 c13" ></td>
+            <td class="bot right c1 c10 c16"></td>
+            <td class="bot c2 c19"></td>
+            <td class="bot left c3 c13 c22" ></td>
           </tr>
 
           <tr>
-            <td class="right c4"></td>
-            <td class="c5 c11 c14"></td>
-            <td class="left c6"></td>
+            <td class="right c4 c17"></td>
+            <td class="c5 c11 c14 c20"></td>
+            <td class="left c6 c23"></td>
           </tr>
 
           <tr>
-            <td class="top right c7 c15"></td>
-            <td class="top c8"></td>
-            <td class="top left c9 c12"></td>
+            <td class="top right c7 c15 c18"></td>
+            <td class="top c8 c21"></td>
+            <td class="top left c9 c12 c24"></td>
           </tr>
         </table>
       </div>
@@ -123,9 +123,11 @@ font-family: 'Quicksand', sans-serif;
              // $('.win').css("top" , pos.top);
          //   });
 
-          var sqaures = [".c1" , ".c2" , ".c3", ".c4" , ".c5" , ".c6" , ".c7" , ".c8" , ".c9" , ".c10" , ".c11" , ".c12" , ".c13", ".c14", ".c15"];
+          var sqaures = [".c1" , ".c2" , ".c3", ".c4" , ".c5" , ".c6" , ".c7" , ".c8" , ".c9" , ".c10" , ".c11" , ".c12" , ".c13", ".c14", ".c15", ".c16", ".c17", ".c18", ".c19", ".c20", ".c21", ".c22", ".c23", ".c24"];
           var players = ["p1", "p2"];
           var player1 = true; 
+          var check = false;
+          
           $('td').click(function (event){
               if($(this).hasClass( "marked" ))
                 {
@@ -150,20 +152,19 @@ font-family: 'Quicksand', sans-serif;
                       }
                 }
               
-            var check;
+            
               for(i =0; i <= sqaures.length - 1; i+=3)
               {
-                  console.log(i);
+                  //console.log(i);
                   for(k = 0; k <= 1; k++)
                   {
-                    // check = 
-                      console.log(i);
                       if(checkForWinner(sqaures[i], sqaures[i+1], sqaures[i+2], players[k]))
-                            alert("Player " + k + " has Won! test Locations");
+                            check = true;
                   }
               }
-              //if(check)
-               //   alert("A Player has Won!");
+              if(check)
+                 hasWon();
+                //alert("A Player has Won!");
               //3498db */
           });
           
@@ -176,6 +177,17 @@ font-family: 'Quicksand', sans-serif;
                   gameWon = true; 
               
               return gameWon; 
+          }
+          
+          function hasWon()
+          { 
+              $("table *").addClass("marked");
+              var player; 
+              if(player1)
+                    player = 2;
+              else
+                  player = 1;
+                alert("Player " + player + " has Won!   ");  
           }
       </script>
   </body>
