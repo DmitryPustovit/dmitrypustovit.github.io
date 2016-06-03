@@ -101,9 +101,9 @@ font-family: 'Quicksand', sans-serif;
           }
         .aiToggle
           {
-           padding: 20px 0px;   
+           //padding: 20px 0px;   
               position: absolute;
-                          top: 100px;
+            top: 100px;
             left: 50%;
             transform: translateX(-50%);
             -webkit-transform: translateX(-50%);
@@ -111,9 +111,9 @@ font-family: 'Quicksand', sans-serif;
               font-family: 'Quicksand', sans-serif;
               font-size: 30px;
               font-weight: 300;
-              border: solid 0.01em #34495e;
-              cursor: pointer;
-              width: 244px;
+              //border: solid 0.01em #34495e;
+              //cursor: pointer;
+              //width: 244px;
               text-align: center;
                           -webkit-touch-callout: none; /* iOS Safari */
               -webkit-user-select: none;   /* Chrome/Safari/Opera */
@@ -149,6 +149,73 @@ font-family: 'Quicksand', sans-serif;
                 top: 30px;
                 left: 30px;
               cursor: pointer;
+          }
+          
+          /* The switch - the box around the slider */
+            .switch {
+              position: relative;
+              display: inline-block;
+              width: 60px;
+              height: 34px;
+                margin-bottom: -8px;
+                margin-left: 20px;
+            }
+
+            /* Hide default HTML checkbox */
+            .switch input {display:none;}
+
+            /* The slider */
+            .slider {
+              position: absolute;
+              cursor: pointer;
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              background-color: #ccc;
+              -webkit-transition: .4s;
+              transition: .4s;
+            }
+
+            .slider:before {
+              position: absolute;
+              content: "";
+              height: 26px;
+              width: 26px;
+              left: 4px;
+              bottom: 4px;
+              background-color: white;
+              -webkit-transition: .4s;
+              transition: .4s;
+            }
+
+            input:checked + .slider {
+              background-color: #2196F3;
+            }
+
+            input:focus + .slider {
+              box-shadow: 0 0 1px #2196F3;
+            }
+
+            input:checked + .slider:before {
+              -webkit-transform: translateX(26px);
+              -ms-transform: translateX(26px);
+              transform: translateX(26px);
+            }
+          
+          .menu{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -webkit-transform: translate(-50%, -50%);
+              height: 300px;
+              width: 300px;
+              background: #34495e;
+              color: white;
+              padding: 20px;
+              font-family: 'Quicksand', sans-serif;
+              display: none;
           }
           
             @media (max-height: 700px) {
@@ -202,17 +269,28 @@ font-family: 'Quicksand', sans-serif;
           </tr>
         </table>
       </div>
-      <div class="aiToggle" onclick="aiToggle()"> Toggle AI </div>
+      <!-- <div class="aiToggle" onclick="aiToggle()"> Toggle AI </div> -->
+      <div class ="aiToggle" onclick="aiToggle()">  AI         <label class="switch">
+          <input class="checkBox" type="checkbox">
+          <div class="slider"></div>
+        </label>
+                             </div>
       <div class="reset" onclick="reset()"> Reset </div>
       <div class="alert"> AI is Disabled </div>
-     <!--  <div class="settings">
+     <div class="settings">
+         
       
         <svg fill="#bdc3c7" height="60" viewBox="0 0 24 24" width="60" xmlns="http://www.w3.org/2000/svg" >
             <path d="M0 0h24v24H0z" fill="none"/>
             <path d="M19.43 12.98c.04-.32.07-.64.07-.98s-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.46 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.49.42l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98s.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.03.24.24.42.49.42h4c.25 0 .46-.18.49-.42l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.23.09.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65zM12 15.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z"/>
         </svg>
-      </div> --> 
-
+         
+      </div>
+      
+      <div class="menu">
+      <span style="font-size: 30px; position: absolute; top: 10px; right: 20px; cursor:pointer;" onclick="closeMenu()"> X </span>
+          <span style=" position: absolute; top: 164px; left: 60px;">To-Do: Add Settings Menu</span>
+      </div>
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
       <script>
@@ -230,8 +308,10 @@ font-family: 'Quicksand', sans-serif;
           var winningLine = 0; 
           var aiEnabled = false;
           var turn = 0;
+          var pause = false;
           
           $('td').click(function (event){
+              console.log(player1);
               if($(this).hasClass( "marked" ))
                 {
                 }
@@ -251,11 +331,11 @@ font-family: 'Quicksand', sans-serif;
                       {
                         if(!aiEnabled)
                           {
-                        $(this).html("O");
+                            $(this).html("O");
                           $(this).css("color" , "#3498db");
                           $(this).addClass("marked");
                           $(this).addClass("p2");
-                              
+                          player1 = !player1;
                           }
                           else
                           {
@@ -265,7 +345,7 @@ font-family: 'Quicksand', sans-serif;
                               $(this).addClass("p1");
                               turn++; 
                           }
-                          player1 = !player1;
+                          
                               
                           
                           
@@ -408,22 +488,35 @@ function reset() {
               }
           function aiToggle()
           {
-            aiEnabled = !aiEnabled;
-            var text;
-              if(aiEnabled)
-                  text = "AI is Enabled : Random AI";
-              else
-                  text = " AI is Disabled";
-              console.log(text);
-            showAlert(text);   
-              //showAlert(aiEnabled);   
-              reset();
+              if(pause == false)
+              {
+                  pause = true;
+                  if($(".checkBox").is(":checked"))
+                      aiEnabled = false;
+                  else 
+                      aiEnabled = true;
+                //aiEnabled = !aiEnabled;
+                var text;
+                  if(aiEnabled)
+                      text = "AI is Enabled : Random AI";
+                  else
+                      text = " AI is Disabled";
+                  console.log(text);
+                showAlert(text);   
+                  //showAlert(aiEnabled);   
+                  reset();
+              }
               
           }
           
           $('.settings').click(function (){
-             showAlert("Settings have not yet been added.");    
+             //showAlert("Settings have not yet been added.");    
+              $(".menu").show();
           });
+          
+          function closeMenu(){
+              $(".menu").hide();     
+          }
           
           function showAlert(text)
           {
@@ -433,7 +526,7 @@ function reset() {
               setTimeout(
               function() 
               {
-                box.fadeOut( "slow", function() {});
+                box.fadeOut( "slow", function() {pause = false;});
               }, 1500);
           }
           
@@ -455,8 +548,13 @@ function reset() {
                               $(sqaures[randomPosisiton]).addClass("marked");
                               $(sqaures[randomPosisiton]).addClass("p2");
                             turn++;
-                              //player1 = !player1;
+                              player1 = !player1;
               }
+              
+          }
+          
+          function unbeatableAI()
+          {
               
           }
       </script>
