@@ -23,8 +23,8 @@ font-family: 'Quicksand', sans-serif;
 -->
       <link href='https://fonts.googleapis.com/css?family=Indie+Flower|Poiret+One|Shadows+Into+Light|Quicksand:400,300' rel='stylesheet' type='text/css'>
       <style>
-        .game{
-        }
+          body{padding: 0; margin: 0;}
+        .game{}
         table{
             //margin: auto;  
             border-spacing: 0;
@@ -71,10 +71,11 @@ font-family: 'Quicksand', sans-serif;
         position: absolute;
             height: 60px;     
          width: 300px;   
-                        top: 50%;
+            top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
             -webkit-transform: translate(-50%, -50%);
+            padding-bottom: 158px;
         } 
       </style>
 
@@ -87,27 +88,27 @@ font-family: 'Quicksand', sans-serif;
   </head>
   <body>
     <div class="game">
-       <!--   <div class="win"> <svg style='width: 100%; height: 50%;'>
+      <!--   <div class="win"> <svg style='width: 100%; height: 50%;'>
             <line x1="0" y1="100%" x2="100%" y2="100%"
                 style="stroke:rgb(255,0,0);stroke-width:2"/>
         </svg> </div> -->
         <table>
           <tr>
-            <td class="bot right" id="r1c1"></td>
-            <td class="bot" id="r1c2"></td>
-            <td class="bot left" id="r1c3" ></td>
+            <td class="bot right c1 c10"></td>
+            <td class="bot c2"></td>
+            <td class="bot left c3 c13" ></td>
           </tr>
 
           <tr>
-            <td class="right" id="r2c1"></td>
-            <td id="r2c2"></td>
-            <td class="left" id="r2c3"></td>
+            <td class="right c4"></td>
+            <td class="c5 c11 c14"></td>
+            <td class="left c6"></td>
           </tr>
 
           <tr>
-            <td class="top right" id="r3c1"></td>
-            <td class="top" id="r3c2"></td>
-            <td class="top left" id="r3c3"></td>
+            <td class="top right c7 c15"></td>
+            <td class="top c8"></td>
+            <td class="top left c9 c12"></td>
           </tr>
         </table>
       </div>
@@ -122,6 +123,8 @@ font-family: 'Quicksand', sans-serif;
              // $('.win').css("top" , pos.top);
          //   });
 
+          var sqaures = [".c1" , ".c2" , ".c3", ".c4" , ".c5" , ".c6" , ".c7" , ".c8" , ".c9" , ".c10" , ".c11" , ".c12" , ".c13", ".c14", ".c15"];
+          var players = ["p1", "p2"];
           var player1 = true; 
           $('td').click(function (event){
               if($(this).hasClass( "marked" ))
@@ -134,6 +137,7 @@ font-family: 'Quicksand', sans-serif;
                           $(this).html("X");
                           $(this).css("color" , "#e74c3c");
                           $(this).addClass("marked");
+                          $(this).addClass("p1");
                           player1 = !player1;
                       }
                       else
@@ -141,11 +145,38 @@ font-family: 'Quicksand', sans-serif;
                           $(this).html("O");
                           $(this).css("color" , "#3498db");
                           $(this).addClass("marked");
+                          $(this).addClass("p2");
                           player1 = !player1;
                       }
                 }
-              //3498db
+              
+            var check;
+              for(i =0; i <= sqaures.length - 1; i+=3)
+              {
+                  console.log(i);
+                  for(k = 0; k <= 1; k++)
+                  {
+                    // check = 
+                      console.log(i);
+                      if(checkForWinner(sqaures[i], sqaures[i+1], sqaures[i+2], players[k]))
+                            alert("Player " + k + " has Won! test Locations");
+                  }
+              }
+              //if(check)
+               //   alert("A Player has Won!");
+              //3498db */
           });
+          
+          
+          function checkForWinner(first, second, third, className){
+              
+              var gameWon = false; 
+              
+              if($(first).hasClass(className) && $(second).hasClass(className) && $(third).hasClass(className))
+                  gameWon = true; 
+              
+              return gameWon; 
+          }
       </script>
   </body>
 </html>
