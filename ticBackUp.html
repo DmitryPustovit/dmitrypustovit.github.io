@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Dmitry Pustovit</title>
-    <!-- 
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Dmitry Pustovit</title>
+
+    <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
+      
+      <!--
+
+
 font-family: 'Indie Flower', cursive;
 
 font-family: 'Poiret One', cursive;
@@ -16,7 +22,6 @@ font-family: 'Quicksand', sans-serif;
 
 -->
       <link href='https://fonts.googleapis.com/css?family=Indie+Flower|Poiret+One|Shadows+Into+Light|Quicksand:400,300' rel='stylesheet' type='text/css'>
-        
       <style>
           body{padding: 0; margin: 0;}
         .game{}
@@ -375,7 +380,6 @@ font-family: 'Quicksand', sans-serif;
                  if(aiEnabled)
                  {
                     randomAI();
-                     //unbeatableAI();
                      checkIfWon();
                  }
           });
@@ -551,233 +555,7 @@ function reset() {
           
           function unbeatableAI()
           {
-                  //Wins or Blocks Opponet from Winning (Doesn't fully work...
-                    for(k = 0; k <= 1; k++)
-                    {
-                        var className = $(players[k]);
-                          for(i =0; i <= sqaures.length - 1; i+=3)
-                          {
-
-                                if($(i).hasClass(className) && $(i+1).hasClass(className) && !$(i+2).hasClass("marked"))
-                                {
-                                      $(sqaures[third]).html("O");
-                                      $(sqaures[third]).css("color" , "#3498db");
-                                      $(sqaures[third]).addClass("marked");
-                                      $(sqaures[third]).addClass("p2");
-                                      turn++;
-                                      player1 = !player1;
-                                }
-                              
-                                if($(i).hasClass(className) && $(i+1).hasClass(className) && !$(i+2).hasClass(className))
-                                {
-                                      $(sqaures[third]).html("O");
-                                      $(sqaures[third]).css("color" , "#3498db");
-                                      $(sqaures[third]).addClass("marked");
-                                      $(sqaures[third]).addClass("p2");
-                                      turn++;
-                                      player1 = !player1;
-                                }
-                              
-                                if($(i).hasClass("marked") && $(i+1).hasClass(className) && !$(i+2).hasClass(className))
-                                {
-                                      $(sqaures[third]).html("O");
-                                      $(sqaures[third]).css("color" , "#3498db");
-                                      $(sqaures[third]).addClass("marked");
-                                      $(sqaures[third]).addClass("p2");
-                                      turn++;
-                                      player1 = !player1;
-                                }
-                            }
-                    }
-
-                //Creates Fork
-                    if($(".c1").hasClass("p2") && !$(".c9").hasClass("marked"))
-                    {
-                            $(sqaures[".c9"]).html("O");
-                            $(sqaures[".c9"]).css("color" , "#3498db");
-                            $(sqaures[".c9"]).addClass("marked");
-                            $(sqaures[".c9"]).addClass("p2");
-                            turn++;
-                            player1 = !player1;
-                    }
               
-                    if($(".c3").hasClass("p2") && !$(".c7").hasClass("marked"))
-                    {
-                            $(sqaures[".c9"]).html("O");
-                            $(sqaures[".c9"]).css("color" , "#3498db");
-                            $(sqaures[".c9"]).addClass("marked");
-                            $(sqaures[".c9"]).addClass("p2");
-                            turn++;
-                            player1 = !player1;
-                    }
-                    if($(".c1").hasClass("p2") && $(".c9").hasClass("p2") && !$(".c3").hasClass("marked"))
-                    {
-                            $(sqaures[".c3"]).html("O");
-                            $(sqaures[".c3"]).css("color" , "#3498db");
-                            $(sqaures[".c3"]).addClass("marked");
-                            $(sqaures[".c3"]).addClass("p2");
-                            turn++;
-                            player1 = !player1;
-                    }
-              
-                    if($(".c1").hasClass("p2") && $(".c9").hasClass("p2") && !$(".c7").hasClass("marked"))
-                    {
-                            $(sqaures[".c7"]).html("O");
-                            $(sqaures[".c7"]).css("color" , "#3498db");
-                            $(sqaures[".c7"]).addClass("marked");
-                            $(sqaures[".c7"]).addClass("p2");
-                            turn++;
-                            player1 = !player1;
-                    }
-              
-                    if($(".c3").hasClass("p2") && $(".c7").hasClass("p2") && !$(".c9").hasClass("marked"))
-                    {
-                            $(sqaures[".c9"]).html("O");
-                            $(sqaures[".c9"]).css("color" , "#3498db");
-                            $(sqaures[".c9"]).addClass("marked");
-                            $(sqaures[".c9"]).addClass("p2");
-                            turn++;
-                            player1 = !player1;
-                    }
-                    if($(".c7").hasClass("p2") && $(".c3").hasClass("p2") && !$(".c1").hasClass("marked"))
-                    {
-                            $(sqaures[".c1"]).html("O");
-                            $(sqaures[".c1"]).css("color" , "#3498db");
-                            $(sqaures[".c1"]).addClass("marked");
-                            $(sqaures[".c1"]).addClass("p2");
-                            turn++;
-                            player1 = !player1;
-                    }
-
-                //Blocks Fork
-                    if($(".c1").hasClass("p1") && $(".c9").hasClass("p1") && !$(".c3").hasClass("marked"))
-                    {
-                            $(sqaures[".c3"]).html("O");
-                            $(sqaures[".c3"]).css("color" , "#3498db");
-                            $(sqaures[".c3"]).addClass("marked");
-                            $(sqaures[".c3"]).addClass("p2");
-                            turn++;
-                            player1 = !player1;
-                    }
-              
-                    if($(".c1").hasClass("p1") && $(".c9").hasClass("p1") && !$(".c7").hasClass("marked"))
-                    {
-                            $(sqaures[".c7"]).html("O");
-                            $(sqaures[".c7"]).css("color" , "#3498db");
-                            $(sqaures[".c7"]).addClass("marked");
-                            $(sqaures[".c7"]).addClass("p2");
-                            turn++;
-                            player1 = !player1;
-                    }
-              
-                    if($(".c3").hasClass("p1") && $(".c7").hasClass("p1") && !$(".c9").hasClass("marked"))
-                    {
-                            $(sqaures[".c9"]).html("O");
-                            $(sqaures[".c9"]).css("color" , "#3498db");
-                            $(sqaures[".c9"]).addClass("marked");
-                            $(sqaures[".c9"]).addClass("p2");
-                            turn++;
-                            player1 = !player1;
-                    }
-                    if($(".c7").hasClass("p1") && $(".c3").hasClass("p1") && !$(".c1").hasClass("marked"))
-                    {
-                            $(sqaures[".c1"]).html("O");
-                            $(sqaures[".c1"]).css("color" , "#3498db");
-                            $(sqaures[".c1"]).addClass("marked");
-                            $(sqaures[".c1"]).addClass("p2");
-                            turn++;
-                            player1 = !player1;
-                    }
-
-                // Center
-                  if(!($(".c5").hasClass("marked")))
-                     {
-                            $(sqaures[".c5"]).html("O");
-                            $(sqaures[".c5"]).css("color" , "#3498db");
-                            $(sqaures[".c5"]).addClass("marked");
-                            $(sqaures[".c5"]).addClass("p2");
-                            turn++;
-                            player1 = !player1;
-                     }
-              
-              var corners = [".c1" , ".c9" , ".c3" , ".c7"];
-              
-              //Opposite corner
-                if(!($(".c1").hasClass("p1")))
-                {
-                    $(sqaures[".c9"]).html("O");
-                    $(sqaures[".c9"]).css("color" , "#3498db");
-                    $(sqaures[".c9"]).addClass("marked");
-                    $(sqaures[".c9"]).addClass("p2");
-                    turn++;
-                    player1 = !player1;
-                    console.log("Proper One");
-                }
-              
-                if(!($(".c9").hasClass("p1")))
-                {
-                    $(sqaures[".c1"]).html("O");
-                    $(sqaures[".c1"]).css("color" , "#3498db");
-                    $(sqaures[".c1"]).addClass("marked");
-                    $(sqaures[".c1"]).addClass("p2");
-                    turn++;
-                    player1 = !player1;
-                }
-              
-                if(!($(".c3").hasClass("p1")))
-                {
-                    $(sqaures[".c7"]).html("O");
-                    $(sqaures[".c7"]).css("color" , "#3498db");
-                    $(sqaures[".c7"]).addClass("marked");
-                    $(sqaures[".c7"]).addClass("p2");
-                    turn++;
-                    player1 = !player1;
-                }
-              
-                if(!($(".c7").hasClass("p1")))
-                {
-                    $(sqaures[".c3"]).html("O");
-                    $(sqaures[".c3"]).css("color" , "#3498db");
-                    $(sqaures[".c3"]).addClass("marked");
-                    $(sqaures[".c3"]).addClass("p2");
-                    turn++;
-                    player1 = !player1;
-                }
-              
-
-              //Empty Corner
-              
-              var randomCorner = Math.floor(Math.random() * 4);
-              var emptyA = false;
-              for(i = 0; i <4; i++)
-              {
-                  if(!$(corners[i]).hasClass("marked"))
-                     emptyA = true;
-                     
-              }
-                     
-              if(emptyA)
-              {
-                $(corners[randomCorner]).html("O");
-                $(corners[randomCorner]).css("color" , "#3498db");
-                $(corners[randomCorner]).addClass("marked");
-                $(corners[randomCorner]).addClass("p2");
-                turn++;
-                player1 = !player1;
-              }
-              else
-              {
-              
-              //Empty middle side
-              var middleSides = [".c2" , ".c4" , ".c6" , ".c8"];
-              var randomCorner = Math.floor(Math.random() * 4);
-                $(corners[randomCorner]).html("O");
-                $(corners[randomCorner]).css("color" , "#3498db");
-                $(corners[randomCorner]).addClass("marked");
-                $(corners[randomCorner]).addClass("p2");
-                turn++;
-                player1 = !player1;
-              }
           }
       </script>
   </body>
