@@ -249,61 +249,61 @@ var player1 = true, check = false, winningLine = 0, aiEnabled = false, turn = 0,
     }
 
 
-function menuCheckBox(number)
-{
-	switch(number)
-	{
-		case 1:
-			$("#s1").prop("checked", true);
-			$("#s2").prop("checked", false);
-			$("#s3").prop("checked", false);
-			Ai = 1;
-			break; 
-			
-		case 2:
-			$("#s1").prop("checked", false);
-			$("#s2").prop("checked", true);
-			$("#s3").prop("checked", false);
-			Ai = 2;
-			break; 
-			
-		case 3:
-			$("#s1").prop("checked", false);
-			$("#s2").prop("checked", false);
-			$("#s3").prop("checked", true);
-			Ai = 3;
-			break; 
-	}
-}
+    function menuCheckBox(number)
+    {
+        switch(number)
+        {
+            case 1:
+                $("#s1").prop("checked", true);
+                $("#s2").prop("checked", false);
+                $("#s3").prop("checked", false);
+                Ai = 1;
+                break; 
+
+            case 2:
+                $("#s1").prop("checked", false);
+                $("#s2").prop("checked", true);
+                $("#s3").prop("checked", false);
+                Ai = 2;
+                break; 
+
+            case 3:
+                $("#s1").prop("checked", false);
+                $("#s2").prop("checked", false);
+                $("#s3").prop("checked", true);
+                Ai = 3;
+                break; 
+        }
+    }
 
 
-function question(number)
-{
-	var text;
-	switch(number)
-	{
-		case 1:
-			text = "Random AI: This AI places a circle in a random spot as long as that spot is not already occupid.";
-			break; 
-			
-		case 2:
-			text = "Mapped AI: This AI places a circle according to a set of preprogrammed rules. Not very fun. Can not set or defeat forks yet.";
-			break; 
-			
-		case 3:
-			text = "Learning AI: This AI places a circle according to the players past games. It is used player data rather then any set of rules.";
-			break; 
-	}
-	$(".QuestionMenu p").html(text);
-	$(".QuestionMenu").show(); 
-}
+    function question(number)
+    {
+        var text;
+        switch(number)
+        {
+            case 1:
+                text = "Random AI: This AI places a circle in a random spot as long as that spot is not already occupid.";
+                break; 
 
-function closeMenuQuestion()
-{
-	$(".QuestionMenu").hide(); 
-}
+            case 2:
+                text = "Mapped AI: This AI places a circle according to a set of preprogrammed rules. Not very fun. Can not set or defeat forks yet.";
+                break; 
+
+            case 3:
+                text = "Learning AI: This AI places a circle according to the players past games. It is used player data rather then any set of rules.";
+                break; 
+        }
+        $(".QuestionMenu p").html(text);
+        $(".QuestionMenu").show(); 
+    }
+
+    function closeMenuQuestion()
+    {
+        $(".QuestionMenu").hide(); 
+    }
           
-    //AIs
+//AIs
 
     //Super Basic Ai that just plots its move into a random point if the point is not already marked.
     function randomAI()
