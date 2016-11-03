@@ -1,0 +1,12 @@
+.afterText{
+    color: black;
+}
+
+.typeTextContent{
+    display: none;
+}
+
+@keyframes blinky {  
+    50% { opacity: 0; }
+}
+/*A Plugin bt Dmitry Pustovit*/
