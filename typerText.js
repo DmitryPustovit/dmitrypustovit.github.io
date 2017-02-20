@@ -15,14 +15,21 @@ $( document ).ready(function() {
         
 function type()
 {
-    $('.typeTextContent').html($('.typeTextContent').text() + textIn.charAt(counter)).delay(600);
+   if(!(textIn.charAt(counter) == '/' && textIn.charAt(counter + 1) == 's' && textIn.charAt(counter + 2) == '/'))
+       $('.typeTextContent').html($('.typeTextContent').html() + textIn.charAt(counter)).delay(500);
+    //$('.typeTextContent').append( textIn.charAt(counter)).delay(600);
+   else
+    {
+        counter += 3;
+        $('.typeTextContent').html($('.typeTextContent').html() + '<br/>').delay(1000);
+    }
     
     counter++;
     
     if(counter == lengthOfString)
         $('.afterText').css("animation", "blinky 1s linear infinite");
     else
-        setTimeout(type, (Math.floor(Math.random()*100) + 50));
+        setTimeout(type, (Math.floor(Math.random()*100) + 50)); //Random Delay (0-149ms)
 }
 
 // A plugin by Dmitry Pustovit
