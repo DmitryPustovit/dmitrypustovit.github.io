@@ -7,6 +7,8 @@
     <title>Welcome User</title>
 	  
 	<style>
+    @import url('https://fonts.googleapis.com/css?family=Quicksand:300,400');
+        
 	.preloaderHolder{
         position: fixed;
         width: 100%;
@@ -86,6 +88,24 @@ animation: spin 1.5s linear infinite;
 		width: 0;
 			height: 0;
 		}
+        
+    .four{
+        font-size: 140px;
+        color: #3498db;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        font-family: 'Quicksand', sans-serif;
+        font-weight: 200;
+        margin-top: -25px;
+    }
+    .four span{
+        position: relative;
+        margin-right: 50px;
+        
+    }
 	  </style>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -96,6 +116,8 @@ animation: spin 1.5s linear infinite;
     <![endif]-->
   </head>
   <body>
+    <div class="four" style="margin-left:120px;"><span>4</span></div>
+    <div class="four" style="margin-left:-120px;"><span>4</span></div>
     <div class="preloaderHolder">
       <div class="preloader"> </div>
     </div>
@@ -104,6 +126,6 @@ animation: spin 1.5s linear infinite;
 	  
 	  </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>\
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   </body>
 </html>
