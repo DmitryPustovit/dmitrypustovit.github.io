@@ -1,0 +1,15 @@
+<html>
+<head>
+<!-- JQuery -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+</head>
+<body>
+  <script>
+  echo count(glob("{$_GET['/posts']}/*.*"));
+  </script>
+<div class="header"></div>
+<script> $( ".header").load( "parts/header.htm"); </script>
+<div id="posts"></div>
+<script src="scripts/posts.js"></script>
+</body>
+</html>

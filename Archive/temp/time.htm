@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>time</title>
+      
+    <style>
+        
+        @import 'https://fonts.googleapis.com/css?family=Poiret+One';
+        @import 'https://fonts.googleapis.com/css?family=Amatic+SC:400,700';
+        @import 'https://fonts.googleapis.com/css?family=Pompiere';
+        
+        
+        /*
+        @import 'https://fonts.googleapis.com/css?family=Raleway:200';
+        @import 'https://fonts.googleapis.com/css?family=Poiret+One';
+        @import 'https://fonts.googleapis.com/css?family=Abel';
+        @import 'https://fonts.googleapis.com/css?family=Quicksand:300,400';
+        @import 'https://fonts.googleapis.com/css?family=Josefin+Slab';
+        @import 'https://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400';
+        @import 'https://fonts.googleapis.com/css?family=Bungee+Hairline';
+        @import 'https://fonts.googleapis.com/css?family=Julius+Sans+One';
+        @import 'https://fonts.googleapis.com/css?family=Reenie+Beanie';
+        @import 'https://fonts.googleapis.com/css?family=Gruppo';
+        @import 'https://fonts.googleapis.com/css?family=Wire+One';
+        @import 'https://fonts.googleapis.com/css?family=Megrim'; */
+        
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        
+        .time{
+            color: #584369;
+            font-size: 120px;
+            //font-weight: 700;
+            font-family: 'Amatic', sans-serif;
+            float: right;
+        }
+        
+        .inline{
+            display: inline-block;
+        }
+        
+        .dayNight{
+            <!-- font-size: 30px;  --> 
+            font-weight: 300;
+            font-family: 'Poiret One', cursive;
+        }
+        
+        .divider{
+         //font-family: 'Pompiere', sans-serif;  
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+        .dateC{
+            //margin-left: 80px; 
+            font-size: 60px; 
+            font-family: 'Poiret One', cursive;
+            float: right;
+        }
+        .container{
+            width: 542px;   
+        }
+    </style>
+      
+          <script type="text/javascript">
+        function startTime(){
+            var current = new Date();
+            var hour = current.getHours();
+            var minute = current.getMinutes();
+            document.getElementById("dayNightM").innerHTML = setCycle(hour);
+            hour = formatTime(hour, true);
+            minute = formatTime(minute, false);
+            document.getElementById("h").innerHTML = hour;
+            document.getElementById("m").innerHTML = minute;
+            setDate();
+            var timeOut = setTimeout(startTime, 500);
+        }
+        function setDate(){
+            //console.log("working");
+            var current = new Date();
+            var month = current.getMonth();
+            month = formatMonth(month);
+            //console.log(month);
+            var day = current.getDay();
+            day = formatDay(day);
+            //console.log(day);
+            var date = current.getDate();
+            document.getElementById("dayM").innerHTML = day;
+            document.getElementById("dateM").innerHTML = month + " " + formatTime(date);
+        }
+              
+        function formatMonth(month){
+            var text;
+            switch(month){
+                case 0:
+                    text = "JAN";
+                    break;
+                case 1:
+                    text = "FEB";
+                    break;
+                case 2:
+                    text = "MAR";
+                    break;
+                case 3:
+                    text = "APR";
+                    break;
+                case 4:
+                    text = "MAY";
+                    break;
+                case 5:
+                    text = "JUN";
+                    break;
+                case 6:
+                    text = "JUL";
+                    break;
+                case 7:
+                    text = "AUG";
+                    break;
+                case 8:
+                    text = "SEP";
+                    break;
+                case 9:
+                    text = "OCT";
+                    break;
+                case 10:
+                    text = "NOV";
+                    break;
+                case 11:
+                    text = "DEC";
+                    break;
+            }
+            return text;
+        }
+        
+        function formatDay(day)
+        {
+            var text; 
+            switch(day)
+            {
+                case 1:
+                    text = "MON";
+                    break;
+                case 2:
+                    text = "TUE";
+                    break;
+                case 3:
+                    text = "WEN";
+                    break;
+                case 4:
+                    text = "THU";
+                    break;
+                case 5:
+                    text = "FRI";
+                    break;
+                case 6:
+                    text = "SAT";
+                    break;
+                case 0:
+                    text = "SUN";
+                    break;
+            }
+            return text;
+        }
+        
+        function setCycle(i){
+            var returnText;
+            if(i > 12)
+                returnText = "PM";
+            else
+                returnText = "AM";
+            return returnText;
+        }
+              
+        function formatTime(i, t){
+            if(i > 12 && t == true){
+                i -= 12;   
+            }
+            if( i < 10){
+                i = "0" + i; 
+            }
+            return i; 
+        }
+    </script>
+
+  </head>
+  <body onload="startTime()">
+    <div class="container">
+        <div class="time">    
+            <div class="hours inline" id="h">02</div>
+            <!--<div class="divider inline"> : </div> -->
+            <div class="minutes inline" id="m">05</div>
+            <div class="dayNight inline" id="dayNightM">AM</div>
+        </div>
+        <div class="dateC">
+            <div class="day inline" id="dayM">TUES</div> 
+            <div class="divider inline"> | </div>
+            <div class="date inline" id="dateM">OCT1</div>
+        </div>
+    </div>
+  </body>
+</html>

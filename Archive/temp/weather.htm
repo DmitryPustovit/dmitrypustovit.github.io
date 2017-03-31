@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>time</title>
+      
+        <style>
+            @import 'https://fonts.googleapis.com/css?family=Poiret+One';
+            @import 'https://fonts.googleapis.com/css?family=Amatic+SC:400,700';
+            @import 'https://fonts.googleapis.com/css?family=Pompiere';
+
+            body{
+                margin: 0;
+                padding: 0;
+            }
+        </style>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      
+        <script type="text/javascript">
+            var x, y;
+            
+         /*   function start(){
+                navigator.geolocation.getCurrentPosition(getPosition);
+            }
+            
+            function getPosition( position )
+            {
+                x = position.coords.latitude;
+                y = position.coords.longitude;
+                //alert(x + " , " + y);
+                $('.x').html(x);
+                $('.y').html(y);
+                getWeather();
+            } */
+            
+            function getWeather(){
+                //alert("test123");
+                //$('.temp').html(convertToFahrenheit(100) + "&deg;");
+                
+                var apiKey = '24f87539d7d8ac4223f8ba49773c76f3';
+                //var url = 'http://api.openweathermap.org/data/2.5/weather?lat=' + x + '&lon=' + y + '&appid=' + apiKey;
+                var url = 'http://api.openweathermap.org/data/2.5/weather?q=Charlotte,us' + '&appid=' + apiKey;
+              /*   $.getJSON( url, function( data ) {
+                    //$('.weather').html(data);
+                    console.log(data);
+                     //$('.loc').html(data.name);
+                     alert(data.name);
+                     //$('.weather').html( 'Looks like ... ' + data.weather[0].description);
+                     $('.temp').html(convertToFahrenheit(data.main.temp) + "&deg;");
+                }); */
+                
+                
+                $.support.cors = true;
+                
+                $.ajax({
+                  url: url,
+                  cache: false,
+                  dataType: "json",
+                  success: function(data) {
+                     //alert(data.name);
+                     //$('.weather').html( 'Looks like ... ' + data.weather[0].description);
+                     $('.temp').html(convertToFahrenheit(data.main.temp) + "&deg;");
+                    //alert(imagesJSON.length);
+                  },
+                  error: function (request, status, error) { alert(status + ", " + error); }
+                });
+
+                  //  $.ajax({ 
+                //        type: 'GET', 
+                  //      url: url ,
+                    //    data: { get_param: 'city' }, 
+                      //  success: function (data) { 
+                        //    var names = data
+                          //  $('.weather').html(data);
+                //        }
+                  //  });
+                
+                var timeOut = setTimeout(getWeather, 3600000);
+            }
+            
+            function convertToFahrenheit(kelvin){
+                return Math.round((9/5) * (kelvin - 273) + 32);
+            }
+        </script>
+      
+        <style>
+            .temp{
+                font-family: arial, helvetica, sans-serif;   
+                font-size: 80px;
+                color: #584369;
+            }
+        </style>
+
+  </head>
+  <body onload="getWeather()">
+    <div class="container">
+       <!--  Current Location
+        <div class="location"> <span class="x"></span> , <span class="y"></span> <br/> Which is apparently ... <span class="loc"></span> </div>
+        <br/>
+        <div class="weather"></div> -->
+        <div class="temp"></div>
+    </div>
+  </body>
+</html>

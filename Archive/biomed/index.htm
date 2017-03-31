@@ -1,0 +1,372 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Diabetes Help Site</title>
+
+<!-- Fonts -->
+<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+
+<!-- Bootstrap -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+<!-- Custom Stylesheet -->
+<style>
+
+
+body{
+font-family: 'Raleway', sans-serif;
+}
+  /* Parallax base styles
+  --------------------------------------------- */
+
+  .parallax {
+    height: 500px; /* fallback for older browsers */
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-perspective: 300px;
+    perspective: 300px;
+  }
+
+  .parallax__group {
+    position: relative;
+    height: 500px; /* fallback for older browsers */
+    height: 100vh;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+  }
+
+  .parallax__layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .parallax__layer--fore {
+    -webkit-transform: translateZ(90px) scale(.7);
+    transform: translateZ(90px) scale(.7);
+    z-index: 1;
+  }
+
+  .parallax__layer--base {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    z-index: 4;
+  }
+
+  .parallax__layer--back {
+    -webkit-transform: translateZ(-300px) scale(2);
+    transform: translateZ(-300px) scale(2);
+    z-index: 3;
+  }
+
+  .parallax__layer--deep {
+    -webkit-transform: translateZ(-600px) scale(3);
+    transform: translateZ(-600px) scale(3);
+    z-index: 2;
+  }
+
+
+  /* Debugger styles - used to show the effect
+  --------------------------------------------- */
+
+  .debug {
+    position: fixed;
+    top: 0;
+    left: .5em;
+    z-index: 999;
+    background: rgba(0,0,0,.85);
+    color: #fff;
+    padding: .5em;
+    border-radius: 0 0 5px 5px;
+  }
+  .debug-on .parallax__group {
+    -webkit-transform: translate3d(800px, 0, -800px) rotateY(30deg);
+    transform: translate3d(700px, 0, -800px) rotateY(30deg);
+ }
+  .debug-on .parallax__layer {
+    box-shadow: 0 0 0 2px #000;
+    opacity: 0.9;
+  }
+  .parallax__group {
+    -webkit-transition: -webkit-transform 0.5s;
+    transition: transform 0.5s;
+  }
+
+
+  /* demo styles
+  --------------------------------------------- */
+
+  body, html {
+    overflow: hidden;
+  }
+
+  body {
+    font: 100% / 1.5 Arial;
+  }
+
+  * {
+    margin:0;
+    padding:0;
+  }
+
+  .parallax {
+    font-size: 200%;
+  }
+
+   /* centre the content in the parallax layers */
+  .title {
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+
+
+
+  /* style the groups
+  --------------------------------------------- */
+
+  #group1 {
+    z-index: 5; /* slide over group 2 */
+  }
+  #group1 .parallax__layer--base {
+    background: #2980b9;
+	background-image: url('qstJZUtQ4uAjijbpLzbT_LO234824.jpg');
+  }
+
+  #group2 {
+    z-index: 3; /* slide under groups 1 and 3 */
+  }
+  #group2 .parallax__layer--back {
+    background: rgb(123,210,102);
+  }
+
+  #group3 {
+    z-index: 4; /* slide over group 2 and 4 */
+  }
+  #group3 .parallax__layer--base {
+    background: rgb(153,216,101);
+  }
+
+  #group4 {
+    z-index: 2; /* slide under group 3 and 5 */
+  }
+  #group4 .parallax__layer--deep {
+    background: rgb(184,223,101);
+  }
+
+  #group5 {
+    z-index: 3; /* slide over group 4 and 6 */
+  }
+  #group5 .parallax__layer--base {
+    background: rgb(214,229,100);
+  }
+
+  #group6 {
+    z-index: 2; /* slide under group 5 and 7 */
+  }
+  #group6 .parallax__layer--back {
+    background: rgb(245,235,100);
+  }
+
+  #group7 {
+    z-index: 3; /* slide over group 7 */
+  }
+  #group7 .parallax__layer--base {
+    background: rgb(255,241,100);
+	background-image:url('DSC_0058_o.JPG');
+  }
+
+
+  /* misc
+  --------------------------------------------- */
+  .demo__info {
+    position: absolute;
+    z-index:100;
+    bottom: 1vh;
+    top: auto;
+    font-size:80%;
+    text-align:center;
+    width: 100%;
+  }
+  
+  .stickyNav{
+  width: 140px;
+  height:216px;
+  position: fixed;
+  z-index: 1;
+  background: #34495e;
+  right: 30px;
+  top: 200px;
+  padding: 6px;
+  }
+  
+      .stickyNav li{
+	  list-style: none;
+	  }
+  
+    .stickyNav a{
+	text-decoration: none;
+	color: white;
+	}
+	
+	#buttons{
+	position: fixed;
+	z-index: 2;
+	right: 20px;
+	bottom: 0%;
+	}
+	
+	.linkButton{
+	text-align:center;
+		padding-top: 17px ;
+		padding-bottom: 17px ;
+	background-color: #34495e;
+	margin-top: 10px;
+	font-size: 20px;
+	}
+	
+	.linkButton a{
+	padding: 20px ;
+	color: white;
+	text-decoration: none;
+	}
+	
+	.linkButton a:hover{
+	background-color: #2c3e50;
+	}
+  
+</style>
+
+  <script>
+
+  </script>
+</head>
+
+<body>
+
+  <!--<div class="debug">
+    <label><input type="checkbox"> Inception </label>
+  </div> -->
+  <!---<div class="demo__info">
+    Pure CSS parallax scroll demo #3 by Keith Clark. Please read the <a href="../">blog post</a> for more information.
+  </div> -->
+  
+ <!-- <div class="stickyNav" style="font-family: 'Source Sans Pro', sans-serif; font-size: 20px;"> 
+	<ul>
+		<li><a href="#"> &#9632; Home</a></li>
+		<li><a href=""> &#9632; Background</a></li>
+		<li><a href=""> &#9632; Diet</a></li>
+		<li><a href=""> &#9632; Blood Sugar</a></li>
+		<li><a href=""> &#9632; Lifestyle</a></li>
+		<li><a href=""> &#9632; Medical Help</a></li>
+		<li><a href=""> &#9632; Learn More</a></li>
+	</ul>
+  </div>
+  -->
+  
+<!--<div id="buttons">
+<div class="linkButton"><a href="">Down</a></div>
+</div>-->
+
+  <div class="parallax">
+    <div id="group1" class="parallax__group">
+      <div class="parallax__layer parallax__layer--base">
+        <div class="title" style="color: #ecf0f1; font-size: 40px; font-family: 'Raleway', sans-serif;">
+		Do You Have Type 1 Diabetes?
+		<div style="font-size: 26px; margin-top: 40px; color: #ecf0f1; font-family: 'Raleway', sans-serif;"> If you or a loved one have Type 1 Diabetes, <strong style="color: #ecf0f1;"> Don't Panic</strong>.<br/> Scroll Down To Learn More</div>
+		</div>
+      </div>
+    </div>
+    <div id="group2" class="parallax__group">
+      <div class="parallax__layer parallax__layer--base">
+        <div class="title" style="">
+			<div class="row" style="text-align:left;">
+			<div class="col-xs-4" style=" text-align: center;"><img src="symbol.png"/> <br/> <br/> <b style="font-weight: 400; font-size: 14px;">Above is the national symbol for Type 1 Diabetes.</b></div>
+				<div class="col-xs-8" style="height:330px;"><p style="margin-top: -10px; font-family: 'Raleway', sans-serif;">Type 1 Diabetes, unlike Type 2 Diabetes, occurs when a person's body cannot naturally produce enough <strong><a href="dontfear.htm#insulin" style="color: #2c3e50;">insulin</a></strong>. This is because the <strong><a href="dontfear.htm#betacells" style="color: #2c3e50;">Beta Cells</a></strong> that are located in Type 1 Diabetic's <strong><a href="dontfear.htm#pancreas" style="color: #2c3e50;">Pancreas</a></strong> are working correctly. <strong><a href="dontfear.htm#pancreas" style="color: #2c3e50;">Insulin</a></strong> is needed because it allows for the human body to use the sugar(<strong><a href="dontfear.htm#glucose" style="color: #2c3e50;">glucose</a></strong>) that it is consumed as energy, this occurs because <strong><a href="dontfear.htm#insulin" style="color: #2c3e50;"> insulin </a></strong> goes into the cells <strong><a href="dontfear.htm#insulinreceptors" style="color: #2c3e50;"> insulin receptors </a></strong> telling the cell's <strong><a href="dontfear.htm#transportproteins" style="color: #2c3e50;">   </a></strong> to come to the <strong><a href="dontfear.htm#cellmembrane" style="color: #2c3e50;"> cell membrane</a></strong> and take in sugar.</p> </div>
+			</div>
+		</div>
+      </div>
+      <div class="parallax__layer parallax__layer--back" style="background: white; background-image:url('vNE8214NS9GOvXOy7DCu_DSC_0266.jpg');">
+        <div class="title">
+			<div class="row">
+			</div>
+		</div>
+      </div>
+    </div>
+    <div id="group3" class="parallax__group">
+      <div class="parallax__layer parallax__layer--fore" >
+		<div class="title" style="margin-top: 100px; font-family: 'Raleway', sans-serif;">The diet for a Type 1 Diabetic varies from person to person as everyone is different. For a person with Type 1 Diabetes, keeping track of how many carbohydrates are in their food is essential. This information is essential as it can tell a person with Type 1 Diabetes how much <strong><a href="dontfear.htm#insulin" style="color: #2c3e50;">insulin</a></strong> they may require. Protein and fat also affect this, however it does not have as rapid of an effect. Generally people with type 1 diabetes eat healthier food. Examples include egg whites, turkey bacon, and skim milk. More Diet info <a href="dontfear.htm#diet"> HERE </a></div>
+      </div>
+      <div class="parallax__layer parallax__layer--base">
+        <div class="title" style="margin-top: -100px;"><img src="apple.png" style="width: 140px;"/></div>
+      </div>
+    </div>
+    <div id="group4" class="parallax__group">
+      <div class="parallax__layer parallax__layer--base">
+        <div class="title" style="padding-top: 250px; color: white; font-family: 'Raleway', sans-serif;"><br/>Type 1 Diabetes is manageable and people with Type 1 Diabetes can live long and healthy lives. However, people who have been diagnosed with Type 1 Diabetes will find that they must monitor their <strong><a href="dontfear.htm#bloodsugar" style="color: #2c3e50;">Blood Sugar Level</a></strong> very carefully. This is done by putting a bit of their blood on finger sticks and then having a machine analysis it. If their <strong><a href="dontfear.htm#bloodsugar" style="color: #2c3e50;">Blood Sugar Level</a></strong> becomes too high, they must inject themselves with <strong><a href="dontfear.htm#insulin" style="color: #2c3e50;">Insulin</a></strong> in order to decrease their <strong><a href="dontfear.htm#bloodsugar" style="color: #2c3e50;">Blood Sugar Level</a></strong>. If a Type 1 Diabetic does not monitor his or her <strong><a href="dontfear.htm#bloodsugar" style="color: #2c3e50;">Blood Sugar Level</a></strong>, they risk become <strong><a href="dontfear.htm#hyperglycaemic" style="color: #2c3e50;">Hyperglycaemic</a></strong>.</div>
+      </div>
+      <div class="parallax__layer parallax__layer--back" style="background: #e74c3c;">
+        <div class="title" style="padding-bottom: 250px;"><img src="bloodsugar.PNG"/></div>
+      </div>
+      <div class="parallax__layer parallax__layer--deep">
+        <div class="title">Deep Background Layer</div>
+      </div>
+    </div>
+    <div id="group5" class="parallax__group">
+      <div class="parallax__layer parallax__layer--fore">
+        <div class="title" style="color:white; font-family: 'Raleway', sans-serif;"><img src="running.png" style="width: 180px;"/><br/>A healthy life style and exercise are very important to a type 1 diabetic. Exercise and a healthy life style help to regulate your body’s Blood Sugar level while allowing you to receive the necessary nutritional values. It helps regulate the sugar in your body. Recommended exercises are aerobics however, talk to your doctor before you alter your lifestyle. </div>
+      </div>
+      <div class="parallax__layer parallax__layer--base" style="background-image:url('QGXfT1CkRpmvlwtPpgul_IMG_0558.jpg');">
+        <div class="title"> </div>
+      </div>
+    </div>
+    <div id="group6" class="parallax__group">
+      <div class="parallax__layer parallax__layer--back">
+        <div class="title"> </div>
+      </div>
+      <div class="parallax__layer parallax__layer--base">
+        <div class="title">
+				<b>Who can help?</b>
+				<br/><br/>
+		<div class="row" style="font-family: 'Raleway', sans-serif;">
+			<div class="col-xs-6"> <img src="pysch.png" style="width: 190px; margin-bottom: 10px; "/> <br/> Psychologist <br/> A psychologist evaluates, diagnoses, treats, and studies behavior and mental processes. Can help diabetics with the the modification of their life styles. </div>
+			<div class="col-xs-6"> <img src="food.png"/> <br/> Nutritionist <br/> A specialist who advises on matters of food and nutrition impacts on health. Can help diabetics create a meal plan that suits them.</div>
+		</div>
+		</div>
+      </div>
+    </div>
+    <div id="group7" class="parallax__group">
+      <div class="parallax__layer parallax__layer--base">
+        <div class="title" style="font-family: 'Raleway', sans-serif;">Don't Fear Type 1 Diabetes. <br/> <br/> <a href="dontfear.htm"> <button type="button" class="btn btn-primary btn-lg">Learn More Here</button></a></div>
+      </div>
+    </div>
+	
+	<div id="footer" style="position: absolute; bottom: 0; left: 40px;"> A website brought to you by Dmitry Pustovit and Dave. </div>
+  </div>
+
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5447df444ff791c4" async="async"></script>
+
+
+
+  <script>
+    var debugInput = document.querySelector("input");
+    function updateDebugState() {
+        document.body.classList.toggle('debug-on', debugInput.checked);
+    }
+    debugInput.addEventListener("click", updateDebugState);
+    updateDebugState();
+  </script>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  
+</body>
+</html>

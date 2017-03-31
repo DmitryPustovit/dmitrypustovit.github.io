@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Upload Files</title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+	
+	<style>
+		body {
+		padding: 50px;
+		background:black;
+		}
+		
+		h1{
+		color: white;
+		margin-top: 200px;
+		font-size: 26px;
+		}
+		
+		.progress{
+		width: 800px;
+		margin: auto;
+
+		display: none;
+		}
+		
+		.holder{
+				margin-top: 200px;
+		}
+		
+		.btn btn-default:hover{
+		color:gray;
+		border: 1px dashed gray;
+		}
+	</style>
+	
+	<script>
+	function runplease(){
+				$( ".THEbutton" ).hide();
+				$( ".progress" ).show();
+				stupid();
+	}
+	function stupid()
+	{
+		var timer = 0;
+		var test = 50;
+		setInterval(function () {timer += 1 ; $("#stupidbar").css("width", (timer * 10) + "%"); 		
+		if(timer > 10)
+		{
+			$( "#done" ).show();
+		}}, 1000);
+	}
+	</script> 
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <center><h1>波紋管，你可以上傳，我已經購買的文件。之後你上傳的文件，你必須給我打電話免費獲贈更多信息</h1></center>
+
+	<div class="holder">
+	<div class="progress">
+	  <div class="progress-bar" id="stupidbar" role="progressbar" aria-valuenow="70"
+	  aria-valuemin="0" aria-valuemax="100" style="width:0%">
+	  </div>
+	</div>
+	<div class="THEbutton">
+	<center><button class="btn btn-default" type="submit" style="width: 100px; font-size: 26px; border: 1px solid white; color: white; background: none;" onclick="runplease()">上传</button></center>
+	</div>
+	</div>
+
+	<div id="done" style="display:none;"><center><h1> 完成 </h1></center> </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  </body>
+</html>

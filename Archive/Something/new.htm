@@ -1,0 +1,168 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta name="description" content="Simplest possible examples of HTML, CSS and JavaScript." />
+<meta name="author" content="//samdutton.com">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+<meta itemprop="name" content="simpl.info: simplest possible examples of HTML, CSS and JavaScript">
+<meta itemprop="image" content="/icon_192x192.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta id="theme-color" name="theme-color" content="#fff">
+
+<base target="_blank">
+
+<title></title>
+
+
+	<style>
+  div.select {
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+  }
+        body{
+             margin: 0;
+    padding: 0
+        }
+  </style>
+
+</head>
+
+<body>
+
+
+  <video muted autoplay style="height:100vh; padding: 0; margin: 0; position: fixed; left: 50%;
+         transform: translateX(-50%);
+        -webkit-transform: translateX(-50%);"></video>
+
+  <script>
+'use strict';
+      
+var videoElement = document.querySelector('video');
+      
+navigator.getUserMedia = navigator.getUserMedia ||
+  navigator.webkitGetUserMedia || navigator.mozGetUserMedia;    
+
+MediaStreamTrack.getSources(function (sourceInfos) {
+   /* for (var i = 0; i < media_sources.length; i++) {
+        var media_source = media_sources[i];
+        var constraints = {};
+        
+        if (media_source.kind == 'audio') {
+            constraints.audio = {
+                optional: [{
+                    sourceId: media_source.id
+                }]
+            };
+        }
+
+        // if video device
+        if (media_source.kind == 'video'  && sourceInfo.facing == 'environment') {
+            constraints.video = {
+                optional: [{
+                    sourceId: media_source.id
+                }]
+            };
+        }
+*/
+      var envSource = sourceInfos.filter(function(sourceInfo) {
+    return sourceInfo.kind == "video"
+        && sourceInfo.facing == "environment";
+  }).reduce(function(a, source) {
+    return source;
+  }, null);
+    
+  var constraints = {
+    audio : false,
+    video : {
+      optional : [{
+        sourceId : envSource ? envSource.id : null
+      }]
+    }
+  };
+
+        // invoke getUserMedia to capture this device
+        navigator.webkitGetUserMedia(constraints, function (stream) {
+            //console.log(stream.id, stream);
+            window.stream = stream; // make stream available to console
+            videoElement.src = window.URL.createObjectURL(stream);
+            videoElement.play();
+        }, function errorCallback(error){
+console.log('navigator.getUserMedia error: ', error);
+}); 
+    
+});
+       
+      
+      
+      
+      
+//var videoSource;
+      
+      
+/* && sourceInfo.facing == "environment" */
+
+/*function gotSources(sourceInfos) {
+  for (var i = 0; i !== sourceInfos.length; ++i) {
+    var sourceInfo = sourceInfos[i];
+    if (sourceInfo.kind === 'video' && sourceInfo.facing == 'environment') {
+        videoSource = sourceInfo.id;
+    }
+  }
+}
+      
+var videoSource = sourceInfos.filter(function(sourceInfos) {
+    return sourceInfos.kind == "video"
+        && sourceInfos.facing == "environment";
+  }).reduce(function(a, source) {
+    return source;
+  }, null);
+    
+if (typeof MediaStreamTrack === 'undefined'){
+alert('This browser does not support MediaStreamTrack.\n\nToo Bad.');
+} else {
+MediaStreamTrack.getSources(gotSources);
+}
+
+function successCallback(stream) {
+window.stream = stream;
+videoElement.src = window.URL.createObjectURL(stream);
+videoElement.play();
+}
+
+function errorCallback(error){
+console.log('navigator.getUserMedia error: ', error);
+}
+    
+function start(){
+if (!!window.stream) {
+ videoElement.src = null;
+ window.stream.stop();
+}
+
+var constraints = {
+      audio: false,
+    video: {
+      optional: [{sourceId: videoSource}]
+    }
+  };
+
+navigator.getUserMedia(constraints, successCallback, errorCallback); 
+}
+ 
+start(); */
+      
+      
+      function autoSize()
+      {
+          
+      }
+    
+    </script>
+
+
+</div>
+
+</body>
+</html>
