@@ -10,12 +10,10 @@
     @import url('https://fonts.googleapis.com/css?family=Quicksand:300,400');
         
 	.preloaderHolder{
-        position: fixed;
-        width: 100%;
-        height: 100%;
         z-index: 6;
-        top: 0;
-        left: 0;
+        position: absolute;
+        top: 114px;
+        left: 150px;
       }
       .preloader{
           display: block;
@@ -58,6 +56,15 @@
           -webkit-animation: spin 1.5s linear infinite;
 animation: spin 1.5s linear infinite;
       }
+    .aBox{
+     height: 170px;
+        width:  288px;
+                position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+    }
 
       @-webkit-keyframes spin {
           0%   {
@@ -92,20 +99,10 @@ animation: spin 1.5s linear infinite;
     .four{
         font-size: 140px;
         color: #3498db;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        -webkit-transform: translate(-50%, -50%);
         font-family: 'Quicksand', sans-serif;
         font-weight: 200;
-        margin-top: -25px;
-    }
-    .four span{
-        position: relative;
-        margin-right: 50px;
-        
-    }
+        position: absolute;
+        top: 0;
 	  </style>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -116,8 +113,8 @@ animation: spin 1.5s linear infinite;
     <![endif]-->
   </head>
   <body>
-    <div class="four" style="margin-left:120px;"><span>4</span></div>
-    <div class="four" style="margin-left:-120px;"><span>4</span></div>
+    <div class="aBox">
+    <div class="four" style="margin-left:0;">4</div>
     <div class="preloaderHolder">
       <div class="preloader"> </div>
     </div>
@@ -125,6 +122,8 @@ animation: spin 1.5s linear infinite;
 	 <div class="animated">
 	  
 	  </div>
+        <div class="four" style="margin-left:216px;">4</div>
+        </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   </body>
