@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand:200,300,400');
+@import url('https://fonts.googleapis.com/css?family=Julius+Sans+One');
+@import url('https://fonts.googleapis.com/earlyaccess/notosansjapanese.css');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+/*
+* Noto Sans Japanese (japanese) http://www.google.com/fonts/earlyaccess
+ */
+@font-face {
+  font-family: 'Noto Sans Japanese';
+  font-style: normal;
+  font-weight: 100;
+  src: url(NotoSansJP-Thin.woff2) format('woff2'),
+       url(NotoSansJP-Thin.woff) format('woff'),
+       url(NotoSansJP-Thin.otf) format('opentype');
+}
+
+body{
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  background: #FCFBF6;
+}
+.content{
+    color: rgb(229, 154, 182);
+    font-family: 'Quicksand', sans-serif;
+    font-size: 50px;
+    font-weight: 200;
+    text-align: left;
+    margin-left: 10%;
+    z-index: 1;
+    letter-spacing: 4px;
+    background: rgba(252, 251, 246, 1);
+}
+
+canvas{
+  z-index: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.question{
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.question i{
+  font-size: 48px;
+  color: rgb(229, 154, 182);
+  cursor: pointer;
+}
+
+.withLove{
+    bottom: 20px;
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 14px;
+    text-align: center;
+    width: 240px;
+}
+.withLove span{
+    color: #CA424F;
+    font-size: 14px;
+}
+.heart{
+    color: #951F1F;
+    font-size: 12px;
+}
+a{
+  text-decoration: none;
+  color:inherit;
+}
+.wf-notosansjapanese { font-family: "Noto Sans Japanese"; font-weight: 100;}
+
+@media screen and (max-width: 600px){
+    .content{
+        width: auto;
+    }
+}
