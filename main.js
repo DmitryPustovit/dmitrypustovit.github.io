@@ -1,5 +1,5 @@
 //Page Load
-$(document).ready(function(){
+$(window).bind("load", function() {
   $('.content').animate({opacity:1}, 2000);
 });
 
