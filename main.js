@@ -1,9 +1,21 @@
+//Page Load
+$(document).ready(function(){
+  $('.content').animate({opacity:1}, 2000);
+});
+
 //Canvas Setup
 var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext('2d');
 
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
+window.addEventListener('resize', resize, false);
+
+function resize()
+{
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
 
 //Running Variables
 var points = [], pointNumber = 200, fps = 60, triggerDistance = 100,  mouse = {x : 0,y : 0};
