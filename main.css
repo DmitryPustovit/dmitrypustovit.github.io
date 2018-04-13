@@ -30,7 +30,7 @@ body{
     margin-left: 10%;
     z-index: 1;
     letter-spacing: 4px;
-    background: rgba(252, 251, 246, 1);
+    //background: rgba(252, 251, 246, 1);
 }
 
 canvas{
