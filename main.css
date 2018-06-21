@@ -90,3 +90,18 @@ a{
         width: auto;
     }
 }
+
+noscript{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  font-size: 24px;
+}
+
+noscript h1{
+  margin-bottom: 14px;
+  color: rgb(149, 31, 31);
+}
+
+noscript span{
+  color: rgb(149, 31, 31);
+}

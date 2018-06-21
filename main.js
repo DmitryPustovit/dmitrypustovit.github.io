@@ -92,5 +92,6 @@ function update() {
   requestAnimationFrame(update);
 }
 
+//Runs
 setup();
 update();
